@@ -1,0 +1,1275 @@
+{
+  "KB": [
+    {
+      "id": "00",
+      "label": "SITE &\nPLANNING",
+      "icon": "◈",
+      "children": [
+        {
+          "id": "00a",
+          "label": "Siting",
+          "children": [
+            {
+              "id": "00a1",
+              "label": "Street setback",
+              "flag": "BOTH",
+              "tp": "B2-1 (Cl 55.02-1)",
+              "wd": "Building Regs Pt 5"
+            },
+            {
+              "id": "00a2",
+              "label": "Side setback",
+              "flag": "BOTH",
+              "tp": "B2-3 (Cl 55.02-3)",
+              "wd": "Building Regs Pt 5"
+            },
+            {
+              "id": "00a3",
+              "label": "Rear setback",
+              "flag": "BOTH",
+              "tp": "B2-3 (Cl 55.02-3)",
+              "wd": "Building Regs Pt 5"
+            },
+            {
+              "id": "00a4",
+              "label": "Building height",
+              "flag": "BOTH",
+              "tp": "B2-2 (Cl 55.02-2)",
+              "wd": "NCC H3 / zone schedule"
+            },
+            {
+              "id": "00a5",
+              "label": "Site coverage",
+              "flag": "TP",
+              "tp": "B2-5 (Cl 55.02-5)",
+              "wd": "—"
+            },
+            {
+              "id": "00a6",
+              "label": "Walls on boundaries",
+              "flag": "BOTH",
+              "tp": "B2-4 (Cl 55.02-4)",
+              "wd": "Building Regs"
+            },
+            {
+              "id": "00a7",
+              "label": "Front fence",
+              "flag": "BOTH",
+              "tp": "B2-8 (Cl 55.02-8)",
+              "wd": "Building Regs"
+            },
+            {
+              "id": "00a8",
+              "label": "Tree canopy (new)",
+              "flag": "TP",
+              "tp": "B2-7 (Cl 55.02-7)",
+              "wd": "—"
+            }
+          ]
+        },
+        {
+          "id": "00b",
+          "label": "Overlays",
+          "children": [
+            {
+              "id": "00b1",
+              "label": "Heritage overlay (HO)",
+              "flag": "TP",
+              "tp": "Cl 43.01",
+              "wd": "—"
+            },
+            {
+              "id": "00b2",
+              "label": "Design & Dev. overlay (DDO)",
+              "flag": "TP",
+              "tp": "Cl 43.02",
+              "wd": "—"
+            },
+            {
+              "id": "00b3",
+              "label": "NCO",
+              "flag": "TP",
+              "tp": "Cl 43.05",
+              "wd": "—"
+            },
+            {
+              "id": "00b4",
+              "label": "Vegetation protection (VPO)",
+              "flag": "TP",
+              "tp": "Cl 42.02",
+              "wd": "—"
+            },
+            {
+              "id": "00b5",
+              "label": "Flood overlay (LSIO/FO)",
+              "flag": "BOTH",
+              "tp": "Cl 44.01/44.02",
+              "wd": "Building Regs"
+            },
+            {
+              "id": "00b6",
+              "label": "Bushfire overlay (BMO)",
+              "flag": "BOTH",
+              "tp": "Cl 44.06/44.05",
+              "wd": "NCC Sec C / AS 3959"
+            },
+            {
+              "id": "00b7",
+              "label": "SLO / ESO",
+              "flag": "TP",
+              "tp": "Cl 42.01/42.03",
+              "wd": "—"
+            },
+            {
+              "id": "00b8",
+              "label": "Restrictive covenant",
+              "flag": "TP",
+              "tp": "Title search",
+              "wd": "—"
+            }
+          ]
+        },
+        {
+          "id": "00c",
+          "label": "Permit triggers",
+          "children": [
+            {
+              "id": "00c1",
+              "label": "Zone permit requirement",
+              "flag": "TP",
+              "tp": "Cl 32.xx",
+              "wd": "—"
+            },
+            {
+              "id": "00c2",
+              "label": "Overlay permit requirement",
+              "flag": "TP",
+              "tp": "Cl 42–44",
+              "wd": "—"
+            },
+            {
+              "id": "00c3",
+              "label": "Clause 52 particular provisions",
+              "flag": "TP",
+              "tp": "Cl 52",
+              "wd": "—"
+            }
+          ]
+        },
+        {
+          "id": "00d",
+          "label": "Legal & Title",
+          "children": [
+            {
+              "id": "00d1",
+              "label": "Title search & covenants",
+              "flag": "TP",
+              "tp": "Title search (Landata)",
+              "wd": "—"
+            },
+            {
+              "id": "00d2",
+              "label": "Easements (Plan of Sub.)",
+              "flag": "BOTH",
+              "tp": "Plan of Subdivision",
+              "wd": "Building Regs"
+            },
+            {
+              "id": "00d3",
+              "label": "Property Info. Certificate",
+              "flag": "BOTH",
+              "tp": "Reg 51(2) — flood liability",
+              "wd": "Building Regs"
+            },
+            {
+              "id": "00d4",
+              "label": "Melbourne Water / catchment",
+              "flag": "BOTH",
+              "tp": "Cl 44.01/44.02 referral",
+              "wd": "Building Regs — flood freeboard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01",
+      "label": "SUB-\nSTRUCTURE",
+      "icon": "▤",
+      "children": [
+        {
+          "id": "01a",
+          "label": "Footings & Slabs",
+          "children": [
+            {
+              "id": "01a1",
+              "label": "Strip footings",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC B1, AS 2870"
+            },
+            {
+              "id": "01a2",
+              "label": "Raft slab",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC B1, AS 2870"
+            },
+            {
+              "id": "01a3",
+              "label": "Pad footings",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC B1"
+            },
+            {
+              "id": "01a4",
+              "label": "Bored piers",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC B1, engineer"
+            },
+            {
+              "id": "01a5",
+              "label": "Soil classification (AS 2870)",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "AS 2870"
+            }
+          ]
+        },
+        {
+          "id": "01b",
+          "label": "Retention & Drainage",
+          "children": [
+            {
+              "id": "01b1",
+              "label": "Retaining walls",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "Building Regs r.71"
+            },
+            {
+              "id": "01b2",
+              "label": "Subsoil drainage",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1.3"
+            },
+            {
+              "id": "01b3",
+              "label": "Basement waterproofing",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC F1"
+            },
+            {
+              "id": "01b4",
+              "label": "Fill & cut — site levels",
+              "flag": "BOTH",
+              "tp": "Building Regs",
+              "wd": "Building Regs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "label": "SUPER-\nSTRUCTURE",
+      "icon": "⬡",
+      "children": [
+        {
+          "id": "02a",
+          "label": "Wall Framing",
+          "children": [
+            {
+              "id": "02a1",
+              "label": "Timber frame",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1, AS 1684"
+            },
+            {
+              "id": "02a2",
+              "label": "Steel frame",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1, AS 4600"
+            },
+            {
+              "id": "02a3",
+              "label": "Brick veneer",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1, AS 3700"
+            },
+            {
+              "id": "02a4",
+              "label": "Full brick masonry",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1, AS 3700"
+            },
+            {
+              "id": "02a5",
+              "label": "Party wall (Class 2+)",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC C2, H4.4"
+            }
+          ]
+        },
+        {
+          "id": "02b",
+          "label": "Roof Structure",
+          "children": [
+            {
+              "id": "02b1",
+              "label": "Roof trusses",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1, AS 4440"
+            },
+            {
+              "id": "02b2",
+              "label": "Rafter / purlin roof",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1, AS 1684"
+            },
+            {
+              "id": "02b3",
+              "label": "Structural steel",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC B1, AS 4100"
+            }
+          ]
+        },
+        {
+          "id": "02c",
+          "label": "Fire Separation",
+          "children": [
+            {
+              "id": "02c1",
+              "label": "Fire-rated wall (FRL)",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC C2"
+            },
+            {
+              "id": "02c2",
+              "label": "Fire door",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC C3, AS 1905.1"
+            },
+            {
+              "id": "02c3",
+              "label": "Penetrations & seals",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC C3.15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "label": "BUILDING\nENVELOPE",
+      "icon": "⌂",
+      "children": [
+        {
+          "id": "03a",
+          "label": "External Walls",
+          "children": [
+            {
+              "id": "03a1",
+              "label": "Wall cladding material",
+              "flag": "BOTH",
+              "tp": "B2 (character)",
+              "wd": "NCC F5, BAL rating"
+            },
+            {
+              "id": "03a2",
+              "label": "Render / paint finish",
+              "flag": "TP",
+              "tp": "B2 (character)",
+              "wd": "—"
+            },
+            {
+              "id": "03a3",
+              "label": "Cavity / insulation",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H6"
+            },
+            {
+              "id": "03a4",
+              "label": "Damp-proof course",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1.3, F1.1"
+            }
+          ]
+        },
+        {
+          "id": "03b",
+          "label": "Roof",
+          "children": [
+            {
+              "id": "03b1",
+              "label": "Roof cladding",
+              "flag": "BOTH",
+              "tp": "B2 (character)",
+              "wd": "NCC F5, BAL rating"
+            },
+            {
+              "id": "03b2",
+              "label": "Roof drainage / gutters",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1.4, AS 3500.3"
+            },
+            {
+              "id": "03b3",
+              "label": "Box gutter",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H1.4"
+            }
+          ]
+        },
+        {
+          "id": "03c",
+          "label": "Windows & Glazing",
+          "children": [
+            {
+              "id": "03c1",
+              "label": "Window size / placement",
+              "flag": "BOTH",
+              "tp": "B3-9, B4-4 (overlooking)",
+              "wd": "NCC H2.2"
+            },
+            {
+              "id": "03c2",
+              "label": "Safety glazing",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H2.4, AS 1288"
+            },
+            {
+              "id": "03c3",
+              "label": "Glazing to neighbour windows",
+              "flag": "TP",
+              "tp": "B4-1, B4-2",
+              "wd": "—"
+            }
+          ]
+        },
+        {
+          "id": "03d",
+          "label": "External Doors",
+          "children": [
+            {
+              "id": "03d1",
+              "label": "External door size & hardware",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H2, D3"
+            },
+            {
+              "id": "03d2",
+              "label": "Garage door",
+              "flag": "BOTH",
+              "tp": "B2-6 (access)",
+              "wd": "Building Regs"
+            }
+          ]
+        },
+        {
+          "id": "03e",
+          "label": "Waterproofing",
+          "children": [
+            {
+              "id": "03e1",
+              "label": "Wet area waterproofing",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC F1.7, AS 3740"
+            },
+            {
+              "id": "03e2",
+              "label": "External deck / balcony",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC F1.7"
+            }
+          ]
+        },
+        {
+          "id": "03f",
+          "label": "Amenity Impact",
+          "children": [
+            {
+              "id": "03f1",
+              "label": "Overlooking screens",
+              "flag": "TP",
+              "tp": "B4-4 (Cl 55.04-4)",
+              "wd": "—"
+            },
+            {
+              "id": "03f2",
+              "label": "Overshadowing — POS",
+              "flag": "TP",
+              "tp": "B4-3 (Cl 55.04-3)",
+              "wd": "—"
+            },
+            {
+              "id": "03f3",
+              "label": "Overshadowing — solar panels",
+              "flag": "TP",
+              "tp": "B5-2 (Cl 55.05-2)",
+              "wd": "—"
+            },
+            {
+              "id": "03f4",
+              "label": "Internal views",
+              "flag": "TP",
+              "tp": "B4-5 (Cl 55.04-5)",
+              "wd": "—"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "label": "INTERIORS",
+      "icon": "⬛",
+      "children": [
+        {
+          "id": "04a",
+          "label": "Room Dimensions",
+          "children": [
+            {
+              "id": "04a1",
+              "label": "Functional layout",
+              "flag": "BOTH",
+              "tp": "B3-7 (Cl 55.03-7)",
+              "wd": "NCC H3.2"
+            },
+            {
+              "id": "04a2",
+              "label": "Room depth",
+              "flag": "TP",
+              "tp": "B3-8 (Cl 55.03-8)",
+              "wd": "—"
+            },
+            {
+              "id": "04a3",
+              "label": "Habitable room min area",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H3.2"
+            },
+            {
+              "id": "04a4",
+              "label": "Ceiling height",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H3.2/H3.3"
+            }
+          ]
+        },
+        {
+          "id": "04b",
+          "label": "Daylight & Ventilation",
+          "children": [
+            {
+              "id": "04b1",
+              "label": "Daylight to new windows",
+              "flag": "BOTH",
+              "tp": "B3-9 (Cl 55.03-9)",
+              "wd": "NCC H3.4"
+            },
+            {
+              "id": "04b2",
+              "label": "Natural ventilation",
+              "flag": "BOTH",
+              "tp": "B3-10 (Cl 55.03-10)",
+              "wd": "NCC H3.4"
+            },
+            {
+              "id": "04b3",
+              "label": "Mechanical ventilation",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H3.4, F4"
+            }
+          ]
+        },
+        {
+          "id": "04c",
+          "label": "Open Space",
+          "children": [
+            {
+              "id": "04c1",
+              "label": "Private open space",
+              "flag": "TP",
+              "tp": "B3-5 (Cl 55.03-5)",
+              "wd": "—"
+            },
+            {
+              "id": "04c2",
+              "label": "Solar access to POS",
+              "flag": "TP",
+              "tp": "B3-6 (Cl 55.03-6)",
+              "wd": "—"
+            },
+            {
+              "id": "04c3",
+              "label": "Clothes drying area",
+              "flag": "TP",
+              "tp": "B3-5 note",
+              "wd": "—"
+            }
+          ]
+        },
+        {
+          "id": "04d",
+          "label": "Circulation",
+          "children": [
+            {
+              "id": "04d1",
+              "label": "Internal stairway",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H2.1, D2"
+            },
+            {
+              "id": "04d2",
+              "label": "Ramp — internal",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC D2, AS 1428.1"
+            },
+            {
+              "id": "04d3",
+              "label": "Corridor width",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC D1 / AS 1428.1"
+            }
+          ]
+        },
+        {
+          "id": "04e",
+          "label": "Accessibility",
+          "children": [
+            {
+              "id": "04e1",
+              "label": "Accessible path of travel",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC D3, AS 1428.1"
+            },
+            {
+              "id": "04e2",
+              "label": "Adaptable dwelling (Class 2)",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC D3.5, AS 4299"
+            },
+            {
+              "id": "04e3",
+              "label": "Storage per dwelling",
+              "flag": "TP",
+              "tp": "B3-11 (Cl 55.03-11)",
+              "wd": "—"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "label": "FITTINGS &\nFIXTURES",
+      "icon": "⚙",
+      "children": [
+        {
+          "id": "05a",
+          "label": "Wet Areas",
+          "children": [
+            {
+              "id": "05a1",
+              "label": "Bathroom / ensuite",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H4.3, F1.7, AS 3740"
+            },
+            {
+              "id": "05a2",
+              "label": "Laundry",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H4.3"
+            },
+            {
+              "id": "05a3",
+              "label": "Floor waste / drainage",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H4.3, AS 3500"
+            }
+          ]
+        },
+        {
+          "id": "05b",
+          "label": "Kitchen",
+          "children": [
+            {
+              "id": "05b1",
+              "label": "Kitchen layout",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H4.3"
+            },
+            {
+              "id": "05b2",
+              "label": "Rangehood / exhaust",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H3.4"
+            }
+          ]
+        },
+        {
+          "id": "05c",
+          "label": "Accessible Fittings",
+          "children": [
+            {
+              "id": "05c1",
+              "label": "Accessible bathroom",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "AS 1428.1 Cl 15"
+            },
+            {
+              "id": "05c2",
+              "label": "Accessible toilet",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "AS 1428.1 Cl 12"
+            },
+            {
+              "id": "05c3",
+              "label": "Grab rails",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "AS 1428.1 Cl 13"
+            },
+            {
+              "id": "05c4",
+              "label": "Door hardware (lever)",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "AS 1428.1 Cl 11"
+            }
+          ]
+        },
+        {
+          "id": "05d",
+          "label": "Waste",
+          "children": [
+            {
+              "id": "05d1",
+              "label": "Waste & recycling storage",
+              "flag": "TP",
+              "tp": "B5-5 (Cl 55.05-5)",
+              "wd": "—"
+            },
+            {
+              "id": "05d2",
+              "label": "Bin collection access",
+              "flag": "TP",
+              "tp": "B5-5",
+              "wd": "—"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "label": "BUILDING\nSERVICES",
+      "icon": "⚡",
+      "children": [
+        {
+          "id": "06a",
+          "label": "Hydraulic",
+          "children": [
+            {
+              "id": "06a1",
+              "label": "Hot water system",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC G3/H5"
+            },
+            {
+              "id": "06a2",
+              "label": "Cold water supply",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC G1, AS 3500.1"
+            },
+            {
+              "id": "06a3",
+              "label": "Gas installation",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC G4, AS 5601"
+            },
+            {
+              "id": "06a4",
+              "label": "Sanitary plumbing",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC F2, AS 3500.2"
+            },
+            {
+              "id": "06a5",
+              "label": "Stormwater disposal",
+              "flag": "BOTH",
+              "tp": "B5-1",
+              "wd": "NCC H1.4, AS 3500.3"
+            }
+          ]
+        },
+        {
+          "id": "06b",
+          "label": "Mechanical",
+          "children": [
+            {
+              "id": "06b1",
+              "label": "Exhaust fan — wet areas",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H3.4"
+            },
+            {
+              "id": "06b2",
+              "label": "Mechanical vent — carpark",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC F4"
+            },
+            {
+              "id": "06b3",
+              "label": "Noise from services",
+              "flag": "TP",
+              "tp": "B5-6 (Cl 55.05-6)",
+              "wd": "—"
+            }
+          ]
+        },
+        {
+          "id": "06c",
+          "label": "Electrical & Fire",
+          "children": [
+            {
+              "id": "06c1",
+              "label": "Smoke alarm (Class 1)",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H4.5"
+            },
+            {
+              "id": "06c2",
+              "label": "Sprinkler system",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC E1.5"
+            },
+            {
+              "id": "06c3",
+              "label": "Emergency lighting",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC E4"
+            },
+            {
+              "id": "06c4",
+              "label": "Switchboard / meter",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H4.6, AS 3000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "label": "EXTERNAL\nWORKS",
+      "icon": "⬔",
+      "children": [
+        {
+          "id": "07a",
+          "label": "Access & Parking",
+          "children": [
+            {
+              "id": "07a1",
+              "label": "Vehicle crossover",
+              "flag": "BOTH",
+              "tp": "B2-6 (Cl 55.02-6)",
+              "wd": "Building Regs"
+            },
+            {
+              "id": "07a2",
+              "label": "Driveway geometry",
+              "flag": "BOTH",
+              "tp": "B2-6",
+              "wd": "Building Regs"
+            },
+            {
+              "id": "07a3",
+              "label": "Car parking (number)",
+              "flag": "TP",
+              "tp": "Cl 52.06",
+              "wd": "—"
+            },
+            {
+              "id": "07a4",
+              "label": "Parking location",
+              "flag": "TP",
+              "tp": "B3-2 (Cl 55.03-2)",
+              "wd": "—"
+            },
+            {
+              "id": "07a5",
+              "label": "Bicycle parking",
+              "flag": "TP",
+              "tp": "Cl 52.34",
+              "wd": "—"
+            },
+            {
+              "id": "07a6",
+              "label": "Accessible parking space",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "AS 2890.6, AS 1428.1"
+            }
+          ]
+        },
+        {
+          "id": "07b",
+          "label": "Fencing",
+          "children": [
+            {
+              "id": "07b1",
+              "label": "Front fence height",
+              "flag": "BOTH",
+              "tp": "B2-8 (Cl 55.02-8)",
+              "wd": "Building Regs"
+            },
+            {
+              "id": "07b2",
+              "label": "Side / rear fence",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "Building Regs (Fences Act)"
+            },
+            {
+              "id": "07b3",
+              "label": "Pool / spa barrier",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "Building Regs, AS 1926.1"
+            }
+          ]
+        },
+        {
+          "id": "07c",
+          "label": "Pedestrian",
+          "children": [
+            {
+              "id": "07c1",
+              "label": "Street integration",
+              "flag": "TP",
+              "tp": "B3-3 (Cl 55.03-3)",
+              "wd": "—"
+            },
+            {
+              "id": "07c2",
+              "label": "Dwelling entry path",
+              "flag": "BOTH",
+              "tp": "B3-4 (Cl 55.03-4)",
+              "wd": "AS 1428.1"
+            },
+            {
+              "id": "07c3",
+              "label": "Shared paths / communal",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "AS 1428.1"
+            }
+          ]
+        },
+        {
+          "id": "07d",
+          "label": "Landscaping",
+          "children": [
+            {
+              "id": "07d1",
+              "label": "Tree canopy (new planting)",
+              "flag": "TP",
+              "tp": "B2-7",
+              "wd": "—"
+            },
+            {
+              "id": "07d2",
+              "label": "Significant tree removal",
+              "flag": "TP",
+              "tp": "Cl 52.17/VPO/SLO",
+              "wd": "—"
+            },
+            {
+              "id": "07d3",
+              "label": "Letterboxes",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "Building Regs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "label": "ESD &\nSUSTAINABILITY",
+      "icon": "◉",
+      "children": [
+        {
+          "id": "08a",
+          "label": "Water Management",
+          "children": [
+            {
+              "id": "08a1",
+              "label": "Site permeability",
+              "flag": "TP",
+              "tp": "B5-1 (Cl 55.05-1)",
+              "wd": "—"
+            },
+            {
+              "id": "08a2",
+              "label": "Stormwater treatment (WSUD)",
+              "flag": "BOTH",
+              "tp": "B5-1, Cl 22 (ESD policy)",
+              "wd": "Building Regs"
+            },
+            {
+              "id": "08a3",
+              "label": "Rainwater reuse",
+              "flag": "TP",
+              "tp": "B5-1, Cl 22 (ESD policy)",
+              "wd": "—"
+            }
+          ]
+        },
+        {
+          "id": "08b",
+          "label": "Solar",
+          "children": [
+            {
+              "id": "08b1",
+              "label": "Rooftop solar generation area",
+              "flag": "TP",
+              "tp": "B5-3 (Cl 55.05-3)",
+              "wd": "—"
+            },
+            {
+              "id": "08b2",
+              "label": "Overshadowing — neighbour solar",
+              "flag": "TP",
+              "tp": "B5-2 (Cl 55.05-2)",
+              "wd": "—"
+            },
+            {
+              "id": "08b3",
+              "label": "Solar protection — N windows",
+              "flag": "TP",
+              "tp": "B5-4 (Cl 55.05-4)",
+              "wd": "—"
+            }
+          ]
+        },
+        {
+          "id": "08c",
+          "label": "Energy Efficiency",
+          "children": [
+            {
+              "id": "08c1",
+              "label": "NatHERS / thermal perf.",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H6.1"
+            },
+            {
+              "id": "08c2",
+              "label": "Whole-of-home energy budget",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H6.2"
+            },
+            {
+              "id": "08c3",
+              "label": "Roof insulation",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H6"
+            },
+            {
+              "id": "08c4",
+              "label": "Glazing performance",
+              "flag": "WD",
+              "tp": "—",
+              "wd": "NCC H6"
+            }
+          ]
+        },
+        {
+          "id": "08d",
+          "label": "Local ESD Policy",
+          "children": [
+            {
+              "id": "08d1",
+              "label": "BESS / STORM tool",
+              "flag": "TP",
+              "tp": "Cl 22 (council-specific)",
+              "wd": "—"
+            },
+            {
+              "id": "08d2",
+              "label": "ESD local policy",
+              "flag": "TP",
+              "tp": "Cl 22 (council-specific)",
+              "wd": "—"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "L1CONN": [
+    {
+      "a": "00",
+      "b": "08",
+      "label": "Coverage / Permeability"
+    },
+    {
+      "a": "00",
+      "b": "03",
+      "label": "Overlay → Cladding spec"
+    },
+    {
+      "a": "03",
+      "b": "04",
+      "label": "Overlooking / POS / Daylight"
+    },
+    {
+      "a": "03",
+      "b": "08",
+      "label": "Solar impact / Thermal envelope"
+    },
+    {
+      "a": "04",
+      "b": "05",
+      "label": "Adaptable dwelling chain"
+    },
+    {
+      "a": "04",
+      "b": "07",
+      "label": "Accessibility chain"
+    },
+    {
+      "a": "06",
+      "b": "08",
+      "label": "Stormwater → WSUD"
+    },
+    {
+      "a": "02",
+      "b": "06",
+      "label": "Fire separation system"
+    }
+  ],
+  "XLINKS": [
+    {
+      "s": "00a4",
+      "t": "00a2",
+      "label": "height drives setback formula"
+    },
+    {
+      "s": "00a5",
+      "t": "08a1",
+      "label": "coverage vs permeability"
+    },
+    {
+      "s": "00b6",
+      "t": "03a1",
+      "label": "BAL rating → cladding spec"
+    },
+    {
+      "s": "03f2",
+      "t": "04c1",
+      "label": "overshadowing impacts POS"
+    },
+    {
+      "s": "03f3",
+      "t": "08b1",
+      "label": "shadows neighbour's solar"
+    },
+    {
+      "s": "04e1",
+      "t": "07a6",
+      "label": "accessibility chain"
+    },
+    {
+      "s": "04e2",
+      "t": "05c1",
+      "label": "adaptable → bathroom standard"
+    },
+    {
+      "s": "06a5",
+      "t": "08a2",
+      "label": "stormwater → WSUD"
+    },
+    {
+      "s": "03a1",
+      "t": "08c3",
+      "label": "thermal envelope link"
+    },
+    {
+      "s": "04c1",
+      "t": "04c2",
+      "label": "POS paired with solar access"
+    },
+    {
+      "s": "08c1",
+      "t": "08c3",
+      "label": "NatHERS → insulation"
+    },
+    {
+      "s": "02c1",
+      "t": "02c2",
+      "label": "fire wall → fire door"
+    },
+    {
+      "s": "03c1",
+      "t": "03f1",
+      "label": "window placement → screen req."
+    }
+  ]
+}

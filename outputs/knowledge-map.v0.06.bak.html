@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Book — Victoria v0.06</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#ffffff;--off:#f5f5f3;--light:#e4e4e2;--mid:#999;--ink:#1a1a1a;--panel-w:340px;--idx-w:210px;}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+/* ── HEADER */
+#hdr{display:flex;align-items:center;gap:10px;padding:0 16px;height:46px;border-bottom:1px solid var(--light);flex-shrink:0;background:var(--bg);z-index:20}
+#logo{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+#logo em{color:var(--mid);font-style:normal;font-weight:400}
+.hdiv{width:1px;height:18px;background:var(--light);flex-shrink:0}
+#srch-wrap{position:relative}
+#srch{border:1px solid var(--light);border-radius:3px;background:var(--bg);color:var(--ink);font-size:12px;padding:5px 9px 5px 26px;width:175px;outline:none;font-family:inherit;transition:border-color .15s}
+#srch:focus{border-color:var(--ink)}
+#sicon{position:absolute;left:8px;top:50%;transform:translateY(-50%);color:var(--mid);font-size:11px;pointer-events:none}
+#sr-drop{position:absolute;top:calc(100% + 4px);left:0;width:300px;background:var(--bg);border:1px solid var(--ink);border-radius:3px;z-index:100;max-height:220px;overflow-y:auto;display:none;box-shadow:0 6px 18px rgba(0,0,0,.1)}
+#sr-drop.open{display:block}
+.sri{padding:7px 12px;font-size:11px;cursor:pointer;border-bottom:1px solid var(--light);display:flex;align-items:center;gap:8px}
+.sri:last-child{border-bottom:none}
+.sri:hover{background:var(--off)}
+.sri-name{font-weight:600;flex:1;min-width:0}
+.sri-path{font-size:9px;color:var(--mid);white-space:nowrap}
+.sri-badge{font-size:8px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;letter-spacing:.05em}
+#mode-tog{display:flex;border:1px solid var(--light);border-radius:3px;overflow:hidden}
+.mbtn{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;background:var(--bg);color:var(--mid);cursor:pointer;border:none;font-family:inherit;transition:all .15s}
+.mbtn.on{background:var(--ink);color:#fff}
+#filt{display:flex;gap:3px}
+.fbtn{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:3px;border:1px solid var(--light);background:var(--bg);color:var(--mid);cursor:pointer;font-family:inherit;transition:all .15s}
+.fbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+#idx-btn{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:3px;border:1px solid var(--light);background:var(--bg);color:var(--mid);cursor:pointer;font-family:inherit;transition:all .15s;display:flex;align-items:center;gap:4px}
+#idx-btn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+#zc{display:flex;gap:3px;margin-left:auto}
+.zbtn{font-size:13px;width:26px;height:26px;border-radius:3px;border:1px solid var(--light);background:var(--bg);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;font-family:inherit}
+.zbtn:hover{background:var(--off)}
+#fitbtn{font-size:10px;width:auto;padding:0 8px;letter-spacing:.05em;font-weight:600}
+
+/* ── MAIN */
+#main{flex:1;display:flex;overflow:hidden;position:relative}
+#graph{flex:1;overflow:hidden;position:relative}
+#graph svg{width:100%;height:100%;display:block;cursor:grab}
+#graph svg:active{cursor:grabbing}
+
+/* ── LEFT INDEX PANEL */
+#idx-panel{width:var(--idx-w);background:var(--bg);border-right:1px solid var(--light);display:flex;flex-direction:column;flex-shrink:0;overflow:hidden;margin-left:calc(-1 * var(--idx-w));transition:margin-left .25s ease}
+#idx-panel.open{margin-left:0}
+#idx-header{padding:12px 14px 8px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--light);flex-shrink:0}
+#idx-header-title{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
+#idx-close{background:none;border:none;cursor:pointer;font-size:12px;color:var(--mid);padding:0;line-height:1;font-family:inherit}
+#idx-close:hover{color:var(--ink)}
+#idx-list{flex:1;overflow-y:auto;padding:4px 0}
+#idx-list::-webkit-scrollbar{width:3px}
+#idx-list::-webkit-scrollbar-thumb{background:var(--light)}
+.idx-item{padding:9px 14px;cursor:pointer;display:flex;flex-direction:column;gap:4px;border-bottom:1px solid var(--light);transition:background .12s;border-left:2px solid transparent}
+.idx-item:last-child{border-bottom:none}
+.idx-item:hover{background:var(--off)}
+.idx-item.active{background:var(--off);border-left-color:var(--ink)}
+.idx-item-title{font-size:11px;font-weight:600;color:var(--ink);line-height:1.3}
+.idx-item-meta{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+
+/* ── SVG LAYERS */
+.l1g{cursor:pointer;transition:opacity .3s}
+.l1g.faded{opacity:.1;pointer-events:none}
+.l1circ{transition:all .2s}
+.l1g:hover .l1circ{opacity:.8}
+.l2g{cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s}
+.l2g.vis{opacity:1;pointer-events:all}
+.l2circ{transition:fill .15s,stroke .15s}
+.l2g:hover .l2circ,.l2g.sel .l2circ{fill:var(--ink)!important;stroke:var(--ink)!important}
+.l2g:hover .l2lbl,.l2g.sel .l2lbl{fill:#fff!important}
+.l2line{opacity:0;transition:opacity .25s;pointer-events:none}
+.l2line.vis{opacity:1}
+/* Selected L2 → L1 parent line: thicker black dash */
+.l2line.l2line-sel{stroke:#1a1a1a!important;stroke-width:2.5!important;stroke-dasharray:6,4!important;opacity:1!important}
+.l3g{cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+.l3g.vis{opacity:1;pointer-events:all}
+.l3g.sel .l3circ{fill:var(--ink)!important;stroke:var(--ink)!important}
+.l3g.sel .l3lbl{fill:#fff!important}
+.l3g:hover .l3circ{stroke-width:2}
+.l3line{opacity:0;transition:opacity .2s;pointer-events:none}
+.l3line.vis{opacity:.5}
+.connpath{opacity:0;transition:opacity .3s;pointer-events:none}
+.connpath.vis{opacity:1;pointer-events:all}
+.backbtn{cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
+.backbtn.vis{opacity:1;pointer-events:all}
+.center-g{pointer-events:none;transition:opacity .3s}
+.center-g.hidden{opacity:0}
+
+/* ── RIGHT PANEL */
+#panel{width:var(--panel-w);background:var(--bg);border-left:1px solid var(--light);display:flex;flex-direction:column;transform:translateX(var(--panel-w));transition:transform .25s ease;flex-shrink:0;overflow:hidden}
+#panel.open{transform:translateX(0)}
+#ppath{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);padding:14px 16px 2px}
+#ptitle{font-size:15px;font-weight:700;padding:2px 16px 12px;border-bottom:1px solid var(--light);line-height:1.3}
+#pbody{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+#pbody::-webkit-scrollbar{width:3px}
+#pbody::-webkit-scrollbar-thumb{background:var(--light)}
+#pfooter{padding:10px 16px;border-top:1px solid var(--light)}
+#pfooter button{width:100%;padding:7px;background:var(--bg);border:1px solid var(--light);border-radius:3px;font-size:11px;font-family:inherit;letter-spacing:.05em;cursor:pointer;color:var(--ink);transition:background .15s}
+#pfooter button:hover{background:var(--off)}
+
+/* ── NODE LIST (L3 items in panel) */
+.l3item{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--light);cursor:pointer;border-radius:3px;transition:opacity .12s}
+.l3item:last-child{border-bottom:none}
+.l3item:hover{opacity:.6}
+.l3item.hilit{background:var(--off);padding-left:6px}
+.lbadge{font-size:8px;font-weight:700;letter-spacing:.06em;padding:2px 5px;border-radius:2px;flex-shrink:0;width:34px;text-align:center}
+.badge-tp{background:var(--ink);color:#fff}
+.badge-wd{border:1px solid var(--mid);color:var(--mid)}
+.badge-both{background:var(--ink);color:#fff}
+.l3lbl{font-size:12px;color:var(--ink)}
+
+/* ── DETAIL PANEL */
+.dback{font-size:11px;color:var(--mid);cursor:pointer;margin-bottom:4px;display:inline-flex;align-items:center;gap:4px}
+.dback:hover{color:var(--ink)}
+.dsec{margin-bottom:12px}
+.dsec-t{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:4px}
+.dsec-b{font-size:12px;line-height:1.65;color:var(--ink)}
+.dsrc{display:inline-block;border:1px solid var(--light);border-radius:2px;padding:2px 6px;font-size:10px;font-family:'Courier New',monospace;margin:2px 2px 0 0;background:var(--off)}
+.dcl{display:flex;gap:6px;margin-bottom:4px;align-items:flex-start;padding:5px 6px;border-radius:3px;cursor:pointer;border:1px solid transparent;transition:border-color .12s}
+.dcl:hover{border-color:var(--light);background:var(--off)}
+.dclbullet{width:5px;height:5px;border-radius:50%;background:var(--ink);flex-shrink:0;margin-top:5px}
+.dcltxt{font-size:11px;line-height:1.5}
+.dcl-nav{font-size:9px;color:var(--mid);letter-spacing:.04em}
+.dcheck{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px solid var(--light);font-size:11px;line-height:1.5}
+.dcheck:last-child{border-bottom:none}
+.dcheck-box{flex-shrink:0;width:13px;height:13px;border:1px solid #bbb;border-radius:2px;margin-top:1px}
+
+/* ── KEYWORD CHIPS */
+.kw-chip{font-size:9px;font-family:'Courier New',monospace;background:var(--off);border:1px solid var(--light);border-radius:2px;padding:1px 5px;color:var(--mid);white-space:nowrap}
+
+/* ── HINT */
+#hint{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--mid);background:var(--bg);border:1px solid var(--light);border-radius:20px;padding:5px 14px;pointer-events:none;transition:opacity .6s;white-space:nowrap}
+#hint.gone{opacity:0}
+</style>
+</head>
+<body>
+
+<div id="hdr">
+  <div id="logo">Knowledge Book <em>| Victoria</em></div>
+  <div class="hdiv"></div>
+  <div id="srch-wrap">
+    <span id="sicon">⌕</span>
+    <input id="srch" type="text" placeholder="Search elements…" autocomplete="off">
+    <div id="sr-drop"></div>
+  </div>
+  <div class="hdiv"></div>
+  <div id="mode-tog">
+    <button class="mbtn on" data-m="browse">Browse</button>
+    <button class="mbtn" data-m="connect">Connections</button>
+  </div>
+  <div class="hdiv"></div>
+  <div id="filt">
+    <button class="fbtn on" data-f="all">All</button>
+    <button class="fbtn" data-f="TP">TP</button>
+    <button class="fbtn" data-f="WD">WD</button>
+  </div>
+  <div class="hdiv"></div>
+  <button id="idx-btn">☰ Index</button>
+  <div id="zc">
+    <button class="zbtn" id="zin">+</button>
+    <button class="zbtn" id="zout">−</button>
+    <button class="zbtn" id="fitbtn">Fit</button>
+  </div>
+</div>
+
+<div id="main">
+  <!-- Left index panel -->
+  <div id="idx-panel">
+    <div id="idx-header">
+      <span id="idx-header-title">TOPICS</span>
+      <button id="idx-close" onclick="document.getElementById('idx-btn').click()">✕</button>
+    </div>
+    <div id="idx-list"></div>
+  </div>
+
+  <!-- Graph canvas -->
+  <div id="graph"></div>
+
+  <!-- Right detail panel -->
+  <div id="panel">
+    <div id="ppath"></div>
+    <div id="ptitle"></div>
+    <div id="pbody"></div>
+    <div id="pfooter"><button id="sugbtn">+ Suggest an addition</button></div>
+  </div>
+</div>
+
+<div id="hint">Click a category · Scroll to zoom · Drag to pan</div>
+
+<!-- Data (JS globals — no server needed) -->
+<script src="kb-data.js"></script>
+<!-- D3, then app logic -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
