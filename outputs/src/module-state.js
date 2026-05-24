@@ -7,6 +7,21 @@
 (function (APP) {
 
   const { nodeById, state } = APP;
+
+  // Fail loudly (named) instead of silently half-initialising if an earlier
+  // module threw and never registered its namespace.
+  const REQUIRED = ['l1', 'l2', 'l3', 'decor', 'connections', 'viewport', 'callout', 'panel', 'index'];
+  const missing = REQUIRED.filter(k => !APP[k]);
+  if (missing.length) {
+    const gEl = document.getElementById('graph');
+    if (gEl) gEl.insertAdjacentHTML('beforeend',
+      '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;' +
+      'color:#fff;font-family:Roboto,sans-serif;padding:40px;text-align:center">' +
+      'Knowledge Book failed to initialise (missing module: ' + missing.join(', ') + ').</div>');
+    console.error('Knowledge Book: missing modules', missing);
+    return;
+  }
+
   const { l1Groups }   = APP.l1;
   const { l2Groups, l2LineG } = APP.l2;
   const { l3Groups, l3LineG } = APP.l3;
@@ -20,6 +35,8 @@
     state.selL1 = cat; state.selL2 = null; state.selL3 = null;
     APP.connections.clearXLinks();
     APP.callout.unpinCallout();
+    // L1-overview connection arcs are meaningless once focused on one category.
+    d3.selectAll('.connpath').classed('vis', false);
     APP.decor.showCenterUI();
     APP.decor.setRingView(1);   // landing → L1 selected: keep orbit ring only
     APP.decor.setBackVisible(true);
@@ -48,7 +65,9 @@
 
     l2Groups.classed('sel', d => d.id === sub.id);
     l3Groups.each(function (d) {
-      d3.select(this).classed('vis', d.parentId === sub.id).classed('sel', false);
+      const here = d.parentId === sub.id;
+      d3.select(this).classed('vis', here).classed('sel', false)
+        .classed('dim', here && !matchesFilter(d.flag));   // honour active TP/WD filter
     });
     l3LineG.selectAll('.l3line').classed('xred', false).each(function () {
       d3.select(this).classed('vis', d3.select(this).attr('data-pid') === sub.id);
@@ -83,6 +102,8 @@
     l3Groups.classed('vis', false).classed('sel', false).classed('dim', false)
       .classed('topic', false).classed('iso-src', false).classed('iso-tgt', false);
     l3LineG.selectAll('.l3line').classed('vis', false).classed('xred', false);
+    // Restore L1-overview connection arcs if we're back at the top level in connect mode.
+    d3.selectAll('.connpath').classed('vis', state.curMode === 'connect');
     APP.panel.closePanel();
   }
 
@@ -110,14 +131,33 @@
   });
 
   // ── FILTER ────────────────────────────────────────────────
+  function matchesFilter(flag) {
+    return state.curFilter === 'all' || flag === state.curFilter || flag === 'BOTH';
+  }
+
   function applyFilter() {
     l2Groups.each(function (d) {
       if (!state.selL1 || d.parentId !== state.selL1.id) return;
-      const show = d.children.some(el =>
-        state.curFilter === 'all' || el.flag === state.curFilter || el.flag === 'BOTH'
-      );
+      const show = d.children.some(el => matchesFilter(el.flag));
       d3.select(this).classed('vis', show && !!state.selL1);
     });
+
+    // Grey out (not just panel-filter) L3 anchors that don't match the active filter.
+    if (state.selL2) {
+      l3Groups.each(function (d) {
+        if (d.parentId !== state.selL2.id) return;
+        d3.select(this).classed('dim', !matchesFilter(d.flag));
+      });
+    }
+
+    // Drop a selected L3 that the filter now excludes, so it isn't left orphaned.
+    if (state.selL3 && !matchesFilter(state.selL3.flag)) {
+      state.selL3 = null;
+      l3Groups.classed('sel', false);
+      APP.connections.clearXLinks();
+      APP.callout.unpinCallout();
+    }
+
     if (state.selL2) APP.panel.openL2Panel(state.selL2);
   }
 
