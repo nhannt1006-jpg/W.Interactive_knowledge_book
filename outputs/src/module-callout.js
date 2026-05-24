@@ -7,6 +7,7 @@
 
 (function (APP) {
 
+  const { esc } = APP;
   const el = document.getElementById('l3-callout');
 
   function badgeClass(flag) {
@@ -27,10 +28,10 @@
     el.innerHTML = `
       <div class="co-header">
         <span class="${badgeClass(d.flag)}">${badgeLabel(d.flag)}</span>
-        <span class="co-label">${d.label}</span>
+        <span class="co-label">${esc(d.label)}</span>
       </div>
-      ${refLine ? `<div class="co-ref">${refLine}</div>` : ''}
-      ${d.obj    ? `<div class="co-obj">${d.obj}</div>` : ''}
+      ${refLine ? `<div class="co-ref">${esc(refLine)}</div>` : ''}
+      ${d.obj    ? `<div class="co-obj">${esc(d.obj)}</div>` : ''}
     `;
     el.classList.remove('hidden');
   }

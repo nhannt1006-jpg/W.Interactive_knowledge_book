@@ -5,7 +5,7 @@
 
 (function (APP) {
 
-  const { nodeById, XLINKS, isExternalLink, RED } = APP;
+  const { nodeById, XLINKS, isExternalLink, RED, esc } = APP;
 
   function flagClass(flag) {
     if (flag === 'TP')   return 'badge-tp';
@@ -28,7 +28,7 @@
       return `<div class="l3item${isHilit ? ' hilit' : ''}"
         onclick="window._app.openL3Panel('${el.id}');window._app.selectL3(nodeById['${el.id}'])">
         <span class="lbadge ${flagClass(el.flag)}">${flagLabel(el.flag)}</span>
-        <span class="l3lbl">${el.label}</span>
+        <span class="l3lbl">${esc(el.label)}</span>
       </div>`;
     }).join('') + (filtered.length === 0
       ? '<div class="empty-note">No elements match current filter.</div>' : '');
@@ -53,37 +53,36 @@
       const other    = nodeById[otherId];
       const otherCat = other ? nodeById[other.grandParentId] : null;
       const external = isExternalLink(id, otherId);
-      const safeLbl  = (x.label || '').replace(/'/g, "\\'");
       if (external) {
         return `<div class="dcl dcl-ext">
           <div class="dclbullet"></div>
-          <div class="dcltxt"><strong>${other ? other.label : ''}</strong><span class="dcl-tag ext">ext</span>
-            <div class="dcl-nav">${x.label} · ${otherCat ? otherCat.label.replace('\n', ' ') : ''} ↗</div>
-            <span class="dcl-open" onclick="event.stopPropagation();window._app.openConnection('${id}','${otherId}','${safeLbl}')">＋ Open connection view</span>
+          <div class="dcltxt"><strong>${esc(other ? other.label : '')}</strong><span class="dcl-tag ext">ext</span>
+            <div class="dcl-nav">${esc(x.label)} · ${esc(otherCat ? otherCat.label.replace('\n', ' ') : '')} ↗</div>
+            <span class="dcl-open" onclick="event.stopPropagation();window._app.openConnection('${id}','${otherId}')">＋ Open connection view</span>
           </div>
         </div>`;
       }
       return `<div class="dcl" onclick="window._app.navigateTo('${otherId}')">
         <div class="dclbullet"></div>
-        <div class="dcltxt"><strong>${other ? other.label : ''}</strong><span class="dcl-tag int">in-category</span>
-          <div class="dcl-nav">${x.label} · ${otherCat ? otherCat.label.replace('\n', ' ') : ''}</div>
+        <div class="dcltxt"><strong>${esc(other ? other.label : '')}</strong><span class="dcl-tag int">in-category</span>
+          <div class="dcl-nav">${esc(x.label)} · ${esc(otherCat ? otherCat.label.replace('\n', ' ') : '')}</div>
         </div>
       </div>`;
     }).join('')}</div>` : '';
 
     const chkHtml = `<div class="dsec"><div class="dsec-t">Compliance checks</div>${
       el.checks && el.checks.length
-        ? el.checks.map(c => `<div class="dcheck"><div class="dcheck-box"></div><span>${c}</span></div>`).join('')
+        ? el.checks.map(c => `<div class="dcheck"><div class="dcheck-box"></div><span>${esc(c)}</span></div>`).join('')
         : '<div class="empty-note">No checklist yet.</div>'
     }</div>`;
 
     document.getElementById('pbody').innerHTML = `
       <div><span class="lbadge ${flagClass(el.flag)}" style="font-size:10px;padding:3px 8px">${flagLabel(el.flag)}</span></div>
-      <div class="dback" onclick="window._app.openL2Panel(nodeById['${el.parentId}'])">← ${sub ? sub.label : ''}</div>
-      ${el.obj    ? `<div class="dsec"><div class="dsec-t">Objective</div><div class="dsec-b dsec-obj">${el.obj}</div></div>` : ''}
-      ${el.summary? `<div class="dsec"><div class="dsec-t">Summary</div><div class="dsec-b">${el.summary}</div></div>` : ''}
-      ${el.tp && el.tp !== '—' ? `<div class="dsec"><div class="dsec-t">Planning permit (TP)</div><div class="dsec-b"><span class="dsrc">${el.tp}</span></div></div>` : ''}
-      ${el.wd && el.wd !== '—' ? `<div class="dsec"><div class="dsec-t">Building permit (WD)</div><div class="dsec-b"><span class="dsrc">${el.wd}</span></div></div>` : ''}
+      <div class="dback" onclick="window._app.openL2Panel(nodeById['${el.parentId}'])">← ${esc(sub ? sub.label : '')}</div>
+      ${el.obj    ? `<div class="dsec"><div class="dsec-t">Objective</div><div class="dsec-b dsec-obj">${esc(el.obj)}</div></div>` : ''}
+      ${el.summary? `<div class="dsec"><div class="dsec-t">Summary</div><div class="dsec-b">${esc(el.summary)}</div></div>` : ''}
+      ${el.tp && el.tp !== '—' ? `<div class="dsec"><div class="dsec-t">Planning permit (TP)</div><div class="dsec-b"><span class="dsrc">${esc(el.tp)}</span></div></div>` : ''}
+      ${el.wd && el.wd !== '—' ? `<div class="dsec"><div class="dsec-t">Building permit (WD)</div><div class="dsec-b"><span class="dsrc">${esc(el.wd)}</span></div></div>` : ''}
       ${xlHtml}${chkHtml}
       <div class="dsec"><div class="dsec-t">Council notes</div>
         <div class="dsec-b empty-note">No council-specific notes yet.</div>
@@ -109,26 +108,26 @@
         <div class="dsec-t">Source</div>
         <div class="l3item" onclick="window._app.exitConnToNode()">
           <span class="lbadge ${flagClass(src.flag)}">${flagLabel(src.flag)}</span>
-          <span class="l3lbl">${src.label}</span>
+          <span class="l3lbl">${esc(src.label)}</span>
         </div>
-        <div class="dcl-nav" style="margin-top:4px">${srcCat ? srcCat.label.replace('\n', ' ') : ''} › ${srcSub ? srcSub.label : ''}</div>
+        <div class="dcl-nav" style="margin-top:4px">${esc(srcCat ? srcCat.label.replace('\n', ' ') : '')} › ${esc(srcSub ? srcSub.label : '')}</div>
       </div>
       <div class="dsec">
         <div class="dsec-t" style="color:${RED}">Connects to ↗</div>
         <div class="l3item" onclick="window._app.navigateTo('${tgt.id}')">
           <span class="lbadge ${flagClass(tgt.flag)}">${flagLabel(tgt.flag)}</span>
-          <span class="l3lbl">${tgt.label}</span>
+          <span class="l3lbl">${esc(tgt.label)}</span>
         </div>
-        <div class="dcl-nav" style="margin-top:4px">${tgtCat ? tgtCat.label.replace('\n', ' ') : ''} › ${tgtSub ? tgtSub.label : ''}</div>
+        <div class="dcl-nav" style="margin-top:4px">${esc(tgtCat ? tgtCat.label.replace('\n', ' ') : '')} › ${esc(tgtSub ? tgtSub.label : '')}</div>
       </div>
       <div class="dsec">
         <div class="dsec-t">Relationship</div>
-        <div class="dsec-b">${label}</div>
+        <div class="dsec-b">${esc(label)}</div>
       </div>
       <div class="dsec">
         <div class="dsec-b">
           <span class="dcl-open" style="color:#FFFFFFCF;border-color:#FFFFFF30"
-            onclick="window._app.navigateTo('${tgt.id}')">Go to ${tgt.label} →</span>
+            onclick="window._app.navigateTo('${tgt.id}')">Go to ${esc(tgt.label)} →</span>
         </div>
       </div>
     `;
@@ -142,11 +141,15 @@
 
   function suggestFor(name, path) {
     const txt = `[Knowledge Book] Suggested addition\nElement: ${name}\nPath: ${path}\n\nNote: [describe your addition here]`;
-    navigator.clipboard.writeText(txt).then(() => {
-      const b = document.getElementById('sugbtn');
-      b.textContent = '✓ Copied to clipboard';
-      setTimeout(() => b.textContent = '+ Suggest an addition', 2500);
-    });
+    const b = document.getElementById('sugbtn');
+    const ok   = () => { b.textContent = '✓ Copied to clipboard'; setTimeout(() => b.textContent = '+ Suggest an addition', 2500); };
+    const fail = () => { b.textContent = '⚠ Press Ctrl+C to copy'; window.prompt('Copy this suggestion:', txt); setTimeout(() => b.textContent = '+ Suggest an addition', 2500); };
+    // navigator.clipboard is undefined in non-secure contexts (e.g. opening the file via file://).
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(ok).catch(fail);
+    } else {
+      fail();
+    }
   }
 
   APP.panel = { openL2Panel, openL3Panel, openConnectionPanel, closePanel, suggestFor };

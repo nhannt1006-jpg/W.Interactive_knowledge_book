@@ -4,7 +4,7 @@
 
 (function (APP) {
 
-  const { KBIDX, allL3Els, nodeById } = APP;
+  const { KBIDX, allL3Els, nodeById, esc } = APP;
   const idxBtn   = document.getElementById('idx-btn');
   const idxPanel = document.getElementById('idx-panel');
   const idxList  = document.getElementById('idx-list');
@@ -27,7 +27,7 @@
       const tp   = nodes.filter(el => el.flag === 'TP' || el.flag === 'BOTH').length;
       const wd   = nodes.filter(el => el.flag === 'WD' || el.flag === 'BOTH').length;
       return `<div class="idx-item" data-idx="${i}">
-        <div class="idx-item-title">${topic.title}</div>
+        <div class="idx-item-title">${esc(topic.title)}</div>
         <div class="idx-item-meta">
           ${tp ? `<span class="lbadge badge-tp" style="width:auto;padding:1px 5px;font-size:8px">TP ${tp}</span>` : ''}
           ${wd ? `<span class="lbadge badge-wd" style="width:auto;padding:1px 5px;font-size:8px">WD ${wd}</span>` : ''}
@@ -123,13 +123,13 @@
     document.getElementById('ptitle').textContent = topic.title;
     const nodeRows = nodes.map(el => {
       const fc = el.flag === 'TP' ? 'badge-tp' : el.flag === 'WD' ? 'badge-wd' : 'badge-both';
-      const fl = el.flag === 'BOTH' ? 'TP+WD' : el.flag || '—';
+      const fl = el.flag === 'BOTH' ? 'TP + WD' : el.flag || '—';
       return `<div class="l3item" onclick="window._app.navigateTo('${el.id}')">
         <span class="lbadge ${fc}">${fl}</span>
-        <span class="l3lbl">${el.label}</span>
+        <span class="l3lbl">${esc(el.label)}</span>
       </div>`;
     }).join('');
-    const kws = topic.keywords.map(k => `<span class="kw-chip">${k}</span>`).join('');
+    const kws = topic.keywords.map(k => `<span class="kw-chip">${esc(k)}</span>`).join('');
     document.getElementById('pbody').innerHTML = `
       <div class="dback" onclick="window._app.backToTopicList()">← All Topics</div>
       <div class="dsec">
@@ -142,7 +142,7 @@
       </div>
       <div class="dsec">
         <div class="dsec-t">AI Reference File</div>
-        <div class="dsec-b"><span class="dsrc">${topic.file}</span></div>
+        <div class="dsec-b"><span class="dsrc">${esc(topic.file)}</span></div>
       </div>
     `;
     document.getElementById('panel').classList.add('open');

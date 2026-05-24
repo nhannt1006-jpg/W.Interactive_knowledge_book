@@ -4,7 +4,7 @@
 
 (function (APP) {
 
-  const { allL3Els, nodeById } = APP;
+  const { allL3Els, nodeById, esc } = APP;
   const srch = document.getElementById('srch');
   const drop = document.getElementById('sr-drop');
 
@@ -26,11 +26,11 @@
     }
     drop.innerHTML = hits.map(el => {
       const fc = el.flag === 'TP' ? 'badge-tp' : el.flag === 'WD' ? 'badge-wd' : 'badge-both';
-      const fl = el.flag === 'BOTH' ? 'TP+WD' : el.flag || '—';
+      const fl = el.flag === 'BOTH' ? 'TP + WD' : el.flag || '—';
       return `<div class="sri" data-id="${el.id}">
         <span class="sri-badge ${fc}">${fl}</span>
-        <span class="sri-name">${el.label}</span>
-        <span class="sri-path">${[el.grandParentLabel, el.parentLabel].filter(Boolean).join(' › ')}</span>
+        <span class="sri-name">${esc(el.label)}</span>
+        <span class="sri-path">${esc([el.grandParentLabel, el.parentLabel].filter(Boolean).join(' › '))}</span>
       </div>`;
     }).join('');
     drop.classList.add('open');

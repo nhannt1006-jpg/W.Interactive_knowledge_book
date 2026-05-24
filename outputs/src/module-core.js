@@ -12,6 +12,16 @@
 
 (function () {
 
+  // Fail fast + visibly if the data script did not load (404, path typo, reorder).
+  if (!window.KB_GRAPH || !window.KB_GRAPH.KB || !window.KB_CONTENT || !window.KB_INDEX) {
+    var gEl = document.getElementById('graph');
+    if (gEl) gEl.insertAdjacentHTML('beforeend',
+      '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;' +
+      'color:#fff;font-family:Roboto,sans-serif;padding:40px;text-align:center">' +
+      'Knowledge Book data failed to load (src/kb-data.js).</div>');
+    return;
+  }
+
   var KB     = window.KB_GRAPH.KB;
   var L1CONN = window.KB_GRAPH.L1CONN;
   var XLINKS = window.KB_GRAPH.XLINKS;
@@ -47,6 +57,13 @@
     var a = nodeById[aId], b = nodeById[bId];
     if (!a || !b) return false;
     return a.grandParentId !== b.grandParentId;
+  }
+
+  // Escape data values before they go into innerHTML (prevents markup injection
+  // and stops content like "<1.5m²" from being swallowed as a stray tag).
+  var ESC_MAP = { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' };
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ESC_MAP[c]; });
   }
 
   // -- GEOMETRY
@@ -131,7 +148,7 @@
   window.APP = {
     KB:KB, L1CONN:L1CONN, XLINKS:XLINKS, KBIDX:KBIDX,
     nodeById:nodeById, allL3Els:allL3Els, allSubs:allSubs,
-    isExternalLink:isExternalLink, RED:RED,
+    isExternalLink:isExternalLink, esc:esc, RED:RED,
     svg:svg, zg:zg, defs:defs,
     bgLayer:bgLayer, lineLayer:lineLayer, nodeLayer:nodeLayer,
     geo:geo, computeGeo:computeGeo, placeNodes:placeNodes, l3dist:l3dist,
