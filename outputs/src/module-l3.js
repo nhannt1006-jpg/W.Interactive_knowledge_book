@@ -31,7 +31,6 @@
     });
     drawL3Labels();
   }
-  drawL3Lines();
 
   // -- L3 ANCHOR DOTS + LABELS (nodeLayer -- above all lines)
   const l3Layer  = nodeLayer.append('g').attr('class', 'l3layer');
@@ -98,6 +97,9 @@
         .attr('x', lx).attr('y', ly).attr('text-anchor', anch);
     });
   }
+
+  // l3Groups + .l3-lbl text nodes now exist -- safe to position lines & labels
+  drawL3Lines();
 
   APP.l3 = { l3Groups, l3LineG, drawL3Lines };
 
