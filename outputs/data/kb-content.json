@@ -1,0 +1,678 @@
+{
+  "00a1": {
+    "obj": "Ensure new buildings relate to the established street setback pattern and maintain the public realm character.",
+    "checks": [
+      "Measure from title boundary to nearest wall face (not eaves/porch)",
+      "Required setback = average of two nearest front walls on adjoining lots, max 9m",
+      "Verify eave encroachment ≤ 2.5m into setback and eave height ≤ 3.6m above NGL",
+      "Check zone schedule for any reduced setback or local policy override"
+    ],
+    "summary": "Walls must be set back to match the lesser of the two abutting properties' front setbacks, or 9 m — whichever is lesser. Porches and eaves may encroach up to 2.5 m if under 3.6 m high. Zone schedule can reduce below 9 m."
+  },
+  "00a2": {
+    "obj": "Protect access to sunlight, daylight, and air circulation between dwellings and adjoining properties.",
+    "checks": [],
+    "summary": "Two paths — B2-3.1: 1m + 0.3m per metre over 3.6m (up to 6.9m), then +1m/m above 6.9m. B2-3.2: flat 3m (non-south) or 6m (south) up to 11m; 4.5m/9m above 11m. One path applies to all boundaries."
+  },
+  "00a3": {
+    "obj": "Maintain privacy, outlook, and amenity for occupants of adjoining properties to the rear.",
+    "checks": [],
+    "summary": "Same standard as side setbacks (B2-3). South boundary stricter under B2-3.2 to minimise overshadowing. Allowable encroachments include eaves, sunblinds, pergolas, stairways, ramps, and carports."
+  },
+  "00a4": {
+    "obj": "Limit building bulk and height to protect neighbourhood character and solar access.",
+    "checks": [],
+    "summary": "Maximum height is per zone or overlay. If unspecified: 9m, rising to 10m where slope across any 8m cross-section is ≥ 2.5°. AHD of natural ground level must be shown on elevations."
+  },
+  "00a5": {
+    "obj": "Limit total building footprint to maintain permeable surfaces, landscaping, and open space.",
+    "checks": [
+      "Include all roofed areas: house, garage, carport, verandahs, outbuildings",
+      "Check zone: NRZ=60%, GRZ=65%, RGZ/MUZ=70% (schedule can only tighten)",
+      "Formula: total footprint ÷ site area × 100",
+      "Exclude unroofed decks and uncovered paths"
+    ],
+    "summary": "NRZ & Township 60%, GRZ 65%, RGZ/MUZ/HCTZ 70%. Zone schedule can only tighten. Formula: total footprint ÷ site area × 100. Includes garages, carports, verandahs, sheds."
+  },
+  "00a6": {
+    "obj": "Limit the extent of zero-setback walls to reduce amenity impact on adjoining properties.",
+    "checks": [],
+    "summary": "Max length = greater of (10m + 25% remaining boundary) or existing wall length on adjacent lot. Avg height ≤ 3.2m, max 3.6m. Exception where slope means effective height < 2m on neighbour's side."
+  },
+  "00a7": {
+    "obj": "Maintain visual permeability and a sense of openness at the street edge.",
+    "checks": [],
+    "summary": "Solid fences in front setback limited to 1.2m. Higher fences permissible if visually permeable above 1.2m. DDO/HO may have stricter requirements."
+  },
+  "00a8": {
+    "obj": "Ensure adequate space for canopy tree planting to maintain urban green infrastructure.",
+    "checks": [],
+    "summary": "Standard B2-7 requires provision for canopy tree planting. Yard dimensions and soil volumes must be sufficient. Some councils specify minimum numbers in local policy or DDO."
+  },
+  "00b1": {
+    "obj": "Protect the cultural heritage significance of places of historical, architectural, or social value.",
+    "checks": [],
+    "summary": "Applies to significant or contributory places. Permit required for external works, demolition, new buildings, subdivision. Must respond to heritage citation and design guidelines. Council-specific."
+  },
+  "00b2": {
+    "obj": "Achieve specific design outcomes beyond ResCode requirements in defined precincts.",
+    "checks": [],
+    "summary": "Design requirements beyond ResCode — often height limits, setbacks, materials, facade articulation. DDO schedules vary by council and precinct. Always check the specific schedule number."
+  },
+  "00b3": {
+    "obj": "Protect and enhance the established neighbourhood character of residential areas.",
+    "checks": [],
+    "summary": "Protects established neighbourhood character. Typical requirements: materials, roof pitch, front setbacks, fences. Highly variable — council-specific schedules govern."
+  },
+  "00b4": {
+    "obj": "Protect significant vegetation including habitat trees and biodiversity values.",
+    "checks": [],
+    "summary": "Protects significant vegetation. Permit needed to remove, destroy or lop vegetation specified in schedule. Check schedule for exempt species and sizes."
+  },
+  "00b5": {
+    "obj": "Manage flood risk to protect the safety of occupants and limit flood damage.",
+    "checks": [],
+    "summary": "LSIO: permit consideration for buildings in flood-prone areas. FO (Floodway) stricter. Habitable floor level typically 300mm above flood level or as specified."
+  },
+  "00b6": {
+    "obj": "Protect life safety in bushfire-prone areas through appropriate construction standards.",
+    "checks": [],
+    "summary": "BAL rating determines construction standard. Requires CFA report at permit stage. NCC construction requirements via AS 3959 apply at building permit stage."
+  },
+  "00b7": {
+    "obj": "Protect significant landscape character and ecological values including waterways and habitat.",
+    "checks": [],
+    "summary": "SLO protects significant landscape including trees and views. ESO protects environmental significance — waterways, wetlands, habitat. Schedules govern permit triggers for each."
+  },
+  "00b8": {
+    "obj": "Enforce private agreements registered on title that constrain use or development.",
+    "checks": [],
+    "summary": "Registered on title. Common: single dwelling only, no flats, material specifications. Must be identified in title search before design. Variation through VCAT — complex and costly."
+  },
+  "00c1": {
+    "obj": "Determine whether a planning permit is required based on zone provisions.",
+    "checks": [],
+    "summary": "Each residential zone has a permit requirement table. GRZ 32.08 and NRZ 32.09 are most common. Check Section 1 (no permit) and Section 2 (permit required) for each use and development type."
+  },
+  "00c2": {
+    "obj": "Determine whether overlays independently trigger a permit beyond zone requirements.",
+    "checks": [],
+    "summary": "Overlays can independently trigger a permit for works otherwise exempt under the zone. Identify all overlays on SPEAR or council's planning map before assessing permit need."
+  },
+  "00c3": {
+    "obj": "Address specific uses and developments requiring consideration beyond zone and overlay.",
+    "checks": [],
+    "summary": "Particular provisions may require a permit regardless of zone or overlay — e.g. Cl 52.06 car parking, Cl 52.17 native vegetation, Cl 52.34 bicycle facilities, Cl 52.29 roads."
+  },
+  "01a1": {
+    "obj": "Transfer wall loads to foundation soils safely consistent with soil classification.",
+    "checks": [],
+    "summary": "Prescriptive design in NCC H1 for Class 1. Depth and dimensions by soil classification per AS 2870. Reactive soil sites (M, H1, H2, E) require engineer design."
+  },
+  "01a2": {
+    "obj": "Provide a stiff integrated footing system for reactive or difficult soil conditions.",
+    "checks": [],
+    "summary": "Common for reactive soil sites. Stiffened raft design per AS 2870. Requires soil test and classification. Engineer design typically required for H1 soil and above."
+  },
+  "01a3": {
+    "obj": "Transfer point loads from columns or posts to foundation soils efficiently.",
+    "checks": [],
+    "summary": "Used under point loads (posts, columns). Sizing by engineer. NCC B1 performance requirement: adequate for loads and site conditions."
+  },
+  "01a4": {
+    "obj": "Found structures on stable soil or rock below difficult surface conditions.",
+    "checks": [],
+    "summary": "Used on difficult sites, steep terrain, or where conventional footings are not viable. Structural engineer design required. Connection details are critical."
+  },
+  "01a5": {
+    "obj": "Classify soil reactivity to guide appropriate footing system selection.",
+    "checks": [],
+    "summary": "AS 2870 soil classifications: A (stable), S, M (moderate), H1, H2 (highly reactive), E (extremely reactive), P (problem). Governs footing system selection."
+  },
+  "01b1": {
+    "obj": "Retain earth safely and prevent slope instability at boundary changes.",
+    "checks": [],
+    "summary": "≤1m: owner-builder permissible. >1m: structural engineer required, building permit may be needed depending on height and proximity to boundary."
+  },
+  "01b2": {
+    "obj": "Prevent water accumulation against footings and subfloor areas.",
+    "checks": [],
+    "summary": "NCC H1.3.2: subsoil drainage required where conditions could cause water to enter building. Agricultural pipe at base of external walls. Discharge to legal point."
+  },
+  "01b3": {
+    "obj": "Protect below-ground structures from moisture penetration and hydrostatic pressure.",
+    "checks": [],
+    "summary": "NCC F1.1: buildings must be protected from rising or penetrating damp. Basement walls and slabs require continuous waterproofing membrane. System selection depends on hydrostatic pressure."
+  },
+  "01b4": {
+    "obj": "Manage earthworks to maintain structural safety and preserve adjoining property drainage.",
+    "checks": [],
+    "summary": "Fill and cut works adjacent to boundaries may affect neighbours and require consent. Levels must correlate with natural ground level (NGL) for height and setback calculations."
+  },
+  "02a1": {
+    "obj": "Provide a safe structural system for loads using prescriptive or engineered timber members.",
+    "checks": [],
+    "summary": "AS 1684 prescriptive span tables for Class 1. Member sizes by wind class, span, and spacing. Framing plans required for building permit."
+  },
+  "02a2": {
+    "obj": "Provide a structural system using cold-formed steel components.",
+    "checks": [],
+    "summary": "Cold-formed steel framing per AS 4600. Engineer design required for non-standard configurations. Corrosion protection required in high-exposure zones."
+  },
+  "02a3": {
+    "obj": "Provide external cladding tied to the structural frame with weatherproof detailing.",
+    "checks": [],
+    "summary": "Most common cladding in Victoria. Veneer tied to structural frame. Weep holes required at base. Control joints per AS 3700."
+  },
+  "02a4": {
+    "obj": "Provide a structural masonry system that carries loads through the wall.",
+    "checks": [],
+    "summary": "Structural masonry per AS 3700. Damp-proof course critical. Engineer may be required for multi-storey construction."
+  },
+  "02a5": {
+    "obj": "Prevent the spread of fire between separate occupancies in multi-unit buildings.",
+    "checks": [],
+    "summary": "FRL required for walls separating sole-occupancy units. NCC C2.3 specifies FRL by building class and storey. Typically 60/60/60 or 90/90/90."
+  },
+  "02b1": {
+    "obj": "Provide an efficient factory-engineered roof structural system.",
+    "checks": [],
+    "summary": "Prefabricated trusses designed by manufacturer per AS 4440 and AS 1684. Engineer certifies. Installation must match certified layout — no field modifications."
+  },
+  "02b2": {
+    "obj": "Provide a conventional site-built roof structure using span tables.",
+    "checks": [],
+    "summary": "Conventional cut roof using AS 1684 span tables. Ridge board, rafters, collar ties, ceiling joists. Structural calculations required for non-standard spans."
+  },
+  "02b3": {
+    "obj": "Provide a heavy structural element for spans or connections requiring engineering.",
+    "checks": [],
+    "summary": "Engineer design required. Connection details, bearing lengths, deflection limits per AS 4100. Corrosion protection and fire rating may apply in Class 2+ buildings."
+  },
+  "02c1": {
+    "obj": "Limit fire spread between occupancies and protect occupants during evacuation.",
+    "checks": [],
+    "summary": "FRL = structural adequacy / integrity / insulation in minutes. Required between Class 2 sole-occupancy units and between units and common areas. Check NCC C2 table for required FRL."
+  },
+  "02c2": {
+    "obj": "Maintain fire separation at openings in fire-rated walls.",
+    "checks": [],
+    "summary": "Fire doors required where fire wall is penetrated by an opening. FRL of door must match or exceed wall. Self-closing mechanism required. Test certification per AS 1905.1."
+  },
+  "02c3": {
+    "obj": "Prevent fire and smoke spread through service penetrations in fire-rated elements.",
+    "checks": [],
+    "summary": "All services penetrating fire-rated elements must be fire-stopped. Intumescent collars for PVC pipes, fire-rated pillows for cables. Tested systems required."
+  },
+  "03a1": {
+    "obj": "Protect the building from weather while responding to neighbourhood character and bushfire risk.",
+    "checks": [],
+    "summary": "TP: cladding must respond to neighbourhood character (B2). WD: non-combustible materials required in BAL zones per AS 3959. NCC H4.1 for Class 1 external wall construction."
+  },
+  "03a2": {
+    "obj": "Achieve appropriate surface finish responding to neighbourhood character and any overlay.",
+    "checks": [],
+    "summary": "Finish and colour may be assessed against neighbourhood character and any DDO or HO requirements. Some councils have local policies specifying preferred materials."
+  },
+  "03a3": {
+    "obj": "Improve thermal performance of the building envelope to reduce energy consumption.",
+    "checks": [],
+    "summary": "Wall insulation R-value per NCC H6 energy efficiency provisions. Victoria mostly Zone 6. Thermal bridging through studs must be considered in the calculation."
+  },
+  "03a4": {
+    "obj": "Prevent moisture rising through masonry walls and entering habitable spaces.",
+    "checks": [],
+    "summary": "DPC required at base of all masonry walls. Must be continuous and correctly lapped. Step-down DPC at floor level changes. Weep holes above DPC for cavity brick."
+  },
+  "03b1": {
+    "obj": "Protect the building from weather while responding to bushfire and character requirements.",
+    "checks": [],
+    "summary": "TP: roof form and material assessed for neighbourhood character. WD: bushfire-affected sites require ember-resistant cladding and sarking per AS 3959."
+  },
+  "03b2": {
+    "obj": "Remove roof water efficiently to prevent damage from overflow or blockage.",
+    "checks": [],
+    "summary": "Gutters and downpipes sized per AS 3500.3 by roof catchment area and rainfall intensity. Box gutters require overflow provision. Downpipes to legal point of discharge."
+  },
+  "03b3": {
+    "obj": "Manage internal roof drainage with overflow provision to prevent water entry.",
+    "checks": [],
+    "summary": "Internal box gutters require overflow relief to prevent ponding and water entry. NCC H1.4 outlines minimum falls and overflow requirements. Common failure point — must be detailed carefully."
+  },
+  "03c1": {
+    "obj": "Balance daylight access, natural ventilation, and overlooking impact on neighbours.",
+    "checks": [],
+    "summary": "TP: window placement affects daylight (B3-9) and overlooking (B4-4). Screens or offset windows required within 9m of neighbour's habitable rooms or POS. WD: openable area for ventilation per NCC H3.4."
+  },
+  "03c2": {
+    "obj": "Prevent injury from broken glass in hazardous locations.",
+    "checks": [],
+    "summary": "Safety glass required in: doors (within 300mm of floor if <1.5m²), windows adjacent to doors, windows <500mm from floor, frameless balustrades. AS 1288 governs glass selection."
+  },
+  "03c3": {
+    "obj": "Protect daylight and solar access to existing neighbouring windows.",
+    "checks": [],
+    "summary": "B4-1: new building must not reduce daylight to existing habitable windows below 1m² sky visibility. B4-2: north-facing windows of existing dwellings must not be overshadowed 9am–3pm on 22 June."
+  },
+  "03d1": {
+    "obj": "Ensure external doors are accessible and meet fire protection requirements where applicable.",
+    "checks": [],
+    "summary": "Minimum doorway width 820mm clear for accessible path. Hardware: lever handles per AS 1428.1. Fire door requirements where applicable in Class 2 buildings."
+  },
+  "03d2": {
+    "obj": "Ensure safe vehicle access and appropriate streetscape integration.",
+    "checks": [],
+    "summary": "TP: garage door width and setback assessed under B2-6 and B3-3. Dominant garage frontage discouraged. WD: automated doors require safety sensors per Building Regs."
+  },
+  "03e1": {
+    "obj": "Prevent water penetration from wet areas to adjacent structure and spaces.",
+    "checks": [],
+    "summary": "AS 3740: Class 1 shower recess to 1800mm high. Class 2 floor and 150mm up walls. All junctions taped and sealed. Certificate of compliance required."
+  },
+  "03e2": {
+    "obj": "Prevent water entry at elevated decks and balconies abutting the building.",
+    "checks": [],
+    "summary": "Decks and balconies abutting the building envelope must be waterproofed where water entry is possible. Falls minimum 1:100 to drainage. Flashing at wall junction critical."
+  },
+  "03f1": {
+    "obj": "Protect privacy of adjoining habitable rooms and private open space.",
+    "checks": [],
+    "summary": "Windows and balconies >0.8m above NGL must not overlook habitable rooms or secluded POS of adjoining properties within a 9m radius. Fixed screens with ≤25% transparency satisfy the standard."
+  },
+  "03f2": {
+    "obj": "Protect sunlight to the private open space of adjoining dwellings.",
+    "checks": [],
+    "summary": "New buildings must not shadow >75% of north-facing secluded POS of adjoining properties between 9am–3pm on 22 September."
+  },
+  "03f3": {
+    "obj": "Protect existing solar collectors on adjoining properties from shadowing.",
+    "checks": [],
+    "summary": "New development must not shadow existing solar collectors on adjoining properties between 10am–2pm on 22 June. Measured on solar collectors, not just the roof."
+  },
+  "03f4": {
+    "obj": "Protect privacy between units in multi-storey apartment buildings.",
+    "checks": [],
+    "summary": "Applies to Class 2 apartments. Where units face each other across communal space <6m wide, screening or offsetting of windows is required."
+  },
+  "04a1": {
+    "obj": "Ensure rooms are usable and well-proportioned for their intended functions.",
+    "checks": [],
+    "summary": "B3-7: each room must be functional in size and configuration. Furniture layouts may need to be demonstrated. NCC H3.2: minimum habitable room sizes for Class 1 buildings."
+  },
+  "04a2": {
+    "obj": "Encourage building forms that allow adequate natural daylight penetration.",
+    "checks": [],
+    "summary": "Maximum room depth of 2.5× the ceiling height if relying on natural light from one side only. Encourages shallower floor plates and better daylight penetration."
+  },
+  "04a3": {
+    "obj": "Ensure minimum room sizes adequate for comfortable habitation.",
+    "checks": [],
+    "summary": "NCC H3.2: bedroom min 7m², main bedroom 9m², living area 10m² (single-bedroom dwelling). Ceiling height minimum 2.4m in habitable rooms."
+  },
+  "04a4": {
+    "obj": "Ensure adequate vertical space in habitable and non-habitable rooms.",
+    "checks": [],
+    "summary": "Habitable rooms: 2.4m for 2/3 of area. Corridors, bathrooms, laundries: 2.1m. Mezzanines: 2.0m clear below and above."
+  },
+  "04b1": {
+    "obj": "Ensure new habitable room windows receive adequate natural daylight.",
+    "checks": [],
+    "summary": "B3-9: new habitable room windows must have daylight access angle ≤55° to vertical. Windows facing a wall <3m away may need screening or relocation. NCC H3.4.2: window area ≥10% of floor area."
+  },
+  "04b2": {
+    "obj": "Ensure habitable rooms receive adequate fresh air through natural means.",
+    "checks": [],
+    "summary": "B3-10: ventilation required to all habitable rooms. NCC H3.4.1: openable area ≥5% of floor area. Cross-ventilation preferred. Mechanical ventilation as alternative."
+  },
+  "04b3": {
+    "obj": "Remove moisture and pollutants where natural ventilation is insufficient.",
+    "checks": [],
+    "summary": "Required where natural ventilation not achievable. Bathroom: 25 L/s, kitchen: 40 L/s (rangehood), toilet: 10 L/s. Duct to external — not into roof space."
+  },
+  "04c1": {
+    "obj": "Provide usable outdoor space of appropriate size and aspect for each dwelling.",
+    "checks": [],
+    "summary": "Ground: 25m² secluded POS, min 3m wide, direct access from living/dining/kitchen. Balcony: area and dimension per Table B3-5 (orientation + bedroom count). Podium: 15m² min 3m wide. Roof: 10m² min 2m wide. +1.5m² if AC unit in POS."
+  },
+  "04c2": {
+    "obj": "Ensure private open space receives adequate direct winter sunlight.",
+    "checks": [],
+    "summary": "Southern boundary of SPOS must be set back ≥ (2 + 0.9h) metres from any wall to the north, where h = height of that wall. Ensures winter sunlight in private open space."
+  },
+  "04c3": {
+    "obj": "Provide practical space for outdoor clothes drying within private open space.",
+    "checks": [],
+    "summary": "Where ground-level POS is provided, a clothes drying area must also be provided. No dimensional standard — must be practical and accessible."
+  },
+  "04d1": {
+    "obj": "Ensure safe vertical circulation within dwellings meeting dimensional requirements.",
+    "checks": [],
+    "summary": "NCC H2.1 (Class 1): rise 115–190mm, going 240–355mm. Handrail both sides if >1m wide, one side if narrower. Min clear width 600mm. Headroom 2.0m minimum."
+  },
+  "04d2": {
+    "obj": "Provide accessible gradient transitions within buildings.",
+    "checks": [],
+    "summary": "Accessible ramps: max gradient 1:14 (1:20 preferred), max rise 190mm between landings, landing 1.2m long. Handrails 865–1000mm high. Non-slip surface required."
+  },
+  "04d3": {
+    "obj": "Ensure corridors are wide enough for practical use and accessible movement.",
+    "checks": [],
+    "summary": "Class 1: minimum 1.0m clear. Class 2 common areas: 1.2m clear for accessible path. Passing bays required where <1.8m wide and >6m long."
+  },
+  "04e1": {
+    "obj": "Provide barrier-free access from public domain to each accessible dwelling.",
+    "checks": [],
+    "summary": "Class 2: accessible path required from carpark/street to each accessible dwelling. Kerb ramps, level thresholds, appropriate tactile indicators. AS 1428.1 specifies minimum dimensions and gradients."
+  },
+  "04e2": {
+    "obj": "Enable dwellings to be readily modified for residents with changing needs.",
+    "checks": [],
+    "summary": "NCC requires a proportion of Class 2 dwellings to be adaptable per AS 4299. Typically Class C (visitable) for most, Class B for nominated units. Reinforcing in walls, wider doorways, level entry."
+  },
+  "04e3": {
+    "obj": "Ensure adequate storage space is provided for each dwelling.",
+    "checks": [],
+    "summary": "B3-11: minimum 6m³ storage (≤2 bedrooms) or 8m³ (3+ bedrooms). May be internal or external, not including under-stairs space. Must be accessible."
+  },
+  "05a1": {
+    "obj": "Provide a waterproof and appropriately fitted bathroom complying with hygiene and accessibility standards.",
+    "checks": [],
+    "summary": "NCC H4.3: impervious floor and wall surfaces required. Waterproofing per AS 3740 (Class 1 shower recess to 1800mm). Exhaust ventilation 25 L/s minimum."
+  },
+  "05a2": {
+    "obj": "Provide an impervious laundry space with adequate drainage and connections.",
+    "checks": [],
+    "summary": "NCC H4.3: impervious floor, floor waste, hot and cold water connections. Drainage to legal point. Ventilation required."
+  },
+  "05a3": {
+    "obj": "Ensure adequate drainage of wet areas preventing water accumulation.",
+    "checks": [],
+    "summary": "Floor wastes required in wet areas. Minimum 80mm waste. Floor graded to waste at minimum 1:80 fall. AS 3500 governs sanitary drainage design."
+  },
+  "05b1": {
+    "obj": "Provide a functional kitchen with impervious surfaces and adequate ventilation.",
+    "checks": [],
+    "summary": "NCC H4.3: continuous impervious benchtop or splashback behind cooking surface. Ventilation via rangehood ducted to outside."
+  },
+  "05b2": {
+    "obj": "Remove cooking fumes, heat, and moisture from the kitchen to outside.",
+    "checks": [],
+    "summary": "NCC H3.4: kitchens require mechanical exhaust where natural ventilation is insufficient. Rangehood ducted to outside — recirculating type does not satisfy NCC ventilation requirement."
+  },
+  "05c1": {
+    "obj": "Provide a bathroom usable by a person using a wheelchair.",
+    "checks": [],
+    "summary": "AS 1428.1 Cl 15: turning circle 1500mm diameter. Shower: 900×900mm minimum, hobless preferred. Basin: 840–900mm AFF. Mirror to 900mm AFF."
+  },
+  "05c2": {
+    "obj": "Provide a toilet accessible and operable by a person with a mobility impairment.",
+    "checks": [],
+    "summary": "AS 1428.1 Cl 12: peninsular WC with 900mm clear on transfer side. Pan height 440–460mm (or adjustable). Flush controls reachable from seated position."
+  },
+  "05c3": {
+    "obj": "Provide stable support for people with reduced mobility in bathrooms and toilets.",
+    "checks": [],
+    "summary": "AS 1428.1 Cl 13: grab rails at toilet (side and rear) and in shower. 32–50mm diameter, min 40mm clear from wall. 180° return ends. Backing plates in adaptable housing."
+  },
+  "05c4": {
+    "obj": "Ensure door hardware on accessible paths is operable without grasping or twisting.",
+    "checks": [],
+    "summary": "AS 1428.1 Cl 11: lever-type door handles required on accessible paths. No round knobs. Lever height 900–1100mm AFF."
+  },
+  "05d1": {
+    "obj": "Provide adequate and accessible space for waste and recycling bins.",
+    "checks": [],
+    "summary": "B5-5: adequate space for waste and recycling bins, accessible by residents and collection vehicles. Location must not adversely affect streetscape or amenity."
+  },
+  "05d2": {
+    "obj": "Ensure bins can be moved efficiently from storage to the kerbside collection point.",
+    "checks": [],
+    "summary": "Bins must be accessible from the street or designated collection point. Where stored internally, a compliant path from storage to kerbside must be demonstrated."
+  },
+  "06a1": {
+    "obj": "Provide a reliable hot water supply with appropriate temperature control and energy efficiency.",
+    "checks": [],
+    "summary": "NCC H5: energy-efficient hot water required. Heat pump or solar preferred. Max 50°C at fixtures per AS 3500.4."
+  },
+  "06a2": {
+    "obj": "Ensure adequate cold water supply to all required fixtures at minimum flow rates.",
+    "checks": [],
+    "summary": "AS 3500.1: minimum 15 L/min at furthest fixture. Pressure regulation required. Backflow prevention at cross-connection points."
+  },
+  "06a3": {
+    "obj": "Ensure safe gas installation with appropriate clearances by a licensed installer.",
+    "checks": [],
+    "summary": "AS 5601.1 governs gas installation. Clearances from windows, vents, ignition sources. Licensed gasfitter required."
+  },
+  "06a4": {
+    "obj": "Ensure effective drainage of waste water preventing contamination and blockage.",
+    "checks": [],
+    "summary": "AS 3500.2: trap depths, venting, drain grades (min 1:60 for 100mm pipe), inspection openings. VBA plumbing permit required."
+  },
+  "06a5": {
+    "obj": "Manage roof and surface water to prevent flooding and protect adjoining properties.",
+    "checks": [],
+    "summary": "TP: B5-1 requires stormwater management. On-site retention may be required. WD: AS 3500.3 governs drainage design. All roof and surface water to legal point of discharge."
+  },
+  "06b1": {
+    "obj": "Remove moisture and pollutants from wet areas preventing mould and structural damage.",
+    "checks": [],
+    "summary": "Exhaust fans required where natural ventilation <5% of floor area. Bathroom: 25 L/s, toilet: 10 L/s, kitchen: 40 L/s. Duct to external — not into roof space."
+  },
+  "06b2": {
+    "obj": "Maintain safe air quality in enclosed carparks by removing carbon monoxide.",
+    "checks": [],
+    "summary": "Class 2 carparks: 6 air changes per hour or CO monitoring per NCC F4. Duct outlet must not affect neighbouring amenity."
+  },
+  "06b3": {
+    "obj": "Protect adjoining residents from unreasonable noise generated by building services.",
+    "checks": [],
+    "summary": "B5-6: HVAC, mechanical exhaust, and other services must not cause unreasonable noise to adjoining properties. AC condensers should be positioned and/or screened."
+  },
+  "06c1": {
+    "obj": "Provide early warning of fire to allow safe evacuation of occupants.",
+    "checks": [],
+    "summary": "NCC H4.5: interconnected smoke alarms in each storey, corridor, and each bedroom (or within 3m of bedroom door). 240V hardwired with battery backup."
+  },
+  "06c2": {
+    "obj": "Suppress or control fire spread in high-risk or multi-storey buildings.",
+    "checks": [],
+    "summary": "NCC E1.5: sprinklers required in Class 2 buildings >25m effective height and certain smaller Class 2 buildings. AS 2118.1 governs design."
+  },
+  "06c3": {
+    "obj": "Enable safe evacuation by maintaining illumination during power failure.",
+    "checks": [],
+    "summary": "Class 2+ common areas: emergency lighting in corridors, stairwells, carparks. AS 2293.1. Battery backup 90 minutes minimum."
+  },
+  "06c4": {
+    "obj": "Provide safe electrical distribution with protection against overload and earth fault.",
+    "checks": [],
+    "summary": "NCC H4.6: electrical installation to AS 3000 Wiring Rules. Switchboard accessible, labelled, with RCD protection. Smart meter required for new dwellings in Victoria."
+  },
+  "07a1": {
+    "obj": "Ensure vehicle access is safe and does not adversely affect pedestrian movement.",
+    "checks": [],
+    "summary": "B2-6: vehicle access must be safe and not unduly impact pedestrian movement or streetscape. Crossover width typically 3–4m. Council approval required."
+  },
+  "07a2": {
+    "obj": "Ensure driveways can be safely used by all vehicles accessing the site.",
+    "checks": [],
+    "summary": "Turning circles for visitor and resident parking. AS 2890.1 for driveway gradients (max 1:5, transition max 1:8). Sight distance from driveway exit to street."
+  },
+  "07a3": {
+    "obj": "Ensure sufficient car parking is provided for the scale of development.",
+    "checks": [],
+    "summary": "Cl 52.06: minimum rates by use. Dwellings: 1 space per 1-bed, 2 spaces per 2+ bed. Zone and local policy may reduce or waive. Visitor parking may be required."
+  },
+  "07a4": {
+    "obj": "Prevent car parking from visually dominating the street frontage.",
+    "checks": [],
+    "summary": "B3-2: parking should not visually dominate the street frontage. Car parking behind building line preferred. Double-width garage facing street discouraged without articulation."
+  },
+  "07a5": {
+    "obj": "Provide convenient, secure bicycle parking to encourage cycling.",
+    "checks": [],
+    "summary": "Cl 52.34: bicycle parking required by use. Residential: 1 space per dwelling. Secure, covered, accessible."
+  },
+  "07a6": {
+    "obj": "Provide parking that is physically accessible for people with disabilities.",
+    "checks": [],
+    "summary": "AS 2890.6: accessible space 2.4m wide + 2.4m shared zone, 5.4m long. 2.5m overhead clearance. Located on accessible path to building entry."
+  },
+  "07b1": {
+    "obj": "Maintain visual openness and passive surveillance at the street edge.",
+    "checks": [],
+    "summary": "B2-8: solid fences in front setback limited to 1.2m. Higher fences permissible if visually permeable above 1.2m. DDO/HO may be stricter."
+  },
+  "07b2": {
+    "obj": "Define property boundaries with appropriate dividing fencing.",
+    "checks": [],
+    "summary": "Fences Act 1968 governs boundary fencing. Standard fence 1.8m. Dividing fence above 2m requires building permit. Cost-sharing applies."
+  },
+  "07b3": {
+    "obj": "Prevent unsupervised access by young children to swimming pools.",
+    "checks": [],
+    "summary": "All pools/spas >300mm depth require compliant safety barrier per AS 1926.1. Self-closing, self-latching gate. No climbable objects within 900mm."
+  },
+  "07c1": {
+    "obj": "Ensure new development addresses and activates the street through design.",
+    "checks": [],
+    "summary": "B3-3: new dwellings must address the street through windows, entries, and landscaping allowing passive surveillance. Blank walls to the street generally not acceptable."
+  },
+  "07c2": {
+    "obj": "Ensure a clear, safe, and direct path from street to each dwelling entry.",
+    "checks": [],
+    "summary": "B3-4: each dwelling must have a clearly defined, direct, safe entry path from the street or communal area. WD: accessible path standards per AS 1428.1 where applicable."
+  },
+  "07c3": {
+    "obj": "Provide safe and accessible movement through shared and common areas.",
+    "checks": [],
+    "summary": "Class 2 common areas: minimum 1.2m wide, 1:20 max grade, contrasting luminance at hazards, tactile indicators at key locations."
+  },
+  "07d1": {
+    "obj": "Maintain and increase urban tree canopy through new planting requirements.",
+    "checks": [],
+    "summary": "B2-7 requires space for canopy tree planting. Yard dimensions and soil volumes must be sufficient."
+  },
+  "07d2": {
+    "obj": "Protect significant trees from removal or damage during development.",
+    "checks": [],
+    "summary": "Removal of native vegetation or significant trees may trigger permit under Cl 52.17, VPO, SLO or ESO. Tree assessment report required."
+  },
+  "07d3": {
+    "obj": "Ensure mail delivery access for all dwellings from the street.",
+    "checks": [],
+    "summary": "Building Regs require letterboxes for all dwellings, accessible from the street. Number must match number of dwellings."
+  },
+  "08a1": {
+    "obj": "Maintain stormwater infiltration and reduce urban heat island effect.",
+    "checks": [],
+    "summary": "B5-1: minimum 20% of site area must be permeable. Porous paving may contribute if demonstrated. Relates to stormwater management and urban cooling."
+  },
+  "08a2": {
+    "obj": "Improve stormwater quality before it enters the drainage network.",
+    "checks": [],
+    "summary": "Water Sensitive Urban Design — rain gardens, swales, bio-retention. Some councils require STORM tool compliance or WSUD report."
+  },
+  "08a3": {
+    "obj": "Reduce potable water consumption by collecting and reusing rainwater.",
+    "checks": [],
+    "summary": "Rainwater tanks for toilet flushing, garden irrigation, laundry cold water. Some ESD policies require minimum tank sizes."
+  },
+  "08b1": {
+    "obj": "Ensure roof design includes usable north-facing area for solar panel installation.",
+    "checks": [],
+    "summary": "B5-3: roof design must include useable north-facing rooftop solar generation area. Must not be shaded between 9am–3pm on 22 June."
+  },
+  "08b2": {
+    "obj": "Protect existing solar collectors on adjoining properties from shadowing by new development.",
+    "checks": [],
+    "summary": "New buildings must not shadow existing solar collectors on adjoining properties between 10am–2pm on 22 June."
+  },
+  "08b3": {
+    "obj": "Balance solar access to provide winter warmth while limiting summer heat gain.",
+    "checks": [],
+    "summary": "B5-4: solar shading required to north-facing windows. Eaves, pergolas, or screens sized to allow winter sun while blocking summer sun."
+  },
+  "08c1": {
+    "obj": "Ensure new dwellings meet minimum thermal comfort and energy efficiency standards.",
+    "checks": [],
+    "summary": "NCC H6.1: minimum 6-star NatHERS rating per dwelling. AccuRate, BERS Pro, or FirstRate5. Must be certified by accredited assessor."
+  },
+  "08c2": {
+    "obj": "Ensure total dwelling energy consumption meets minimum efficiency requirements.",
+    "checks": [],
+    "summary": "NCC H6.2 (introduced 2022): whole-of-home energy budget pathway as alternative to NatHERS. Accounts for fixed appliances alongside thermal envelope performance."
+  },
+  "08c3": {
+    "obj": "Reduce heat transfer through the roof to improve thermal comfort and energy efficiency.",
+    "checks": [],
+    "summary": "R-value requirements per NCC H6. Victoria (Zone 6): ceiling R4.1–R5.1, walls R2.0–R2.8."
+  },
+  "08c4": {
+    "obj": "Reduce heat transfer through glazing to improve thermal comfort and energy efficiency.",
+    "checks": [],
+    "summary": "NCC H6: glazing U-value and SHGC requirements. Double glazing typically required in Zone 6. Low-E coatings and thermally broken frames improve performance."
+  },
+  "08d1": {
+    "obj": "Holistically assess ESD performance of proposed development at planning permit stage.",
+    "checks": [],
+    "summary": "BESS or STORM used by some councils to assess ESD performance holistically. Required at TP application stage. Council-specific — check local Cl 22 policy."
+  },
+  "08d2": {
+    "obj": "Apply council-specific sustainability requirements beyond the standard NCC and ResCode baseline.",
+    "checks": [],
+    "summary": "Many councils have an ESD local policy (Cl 22.xx) requiring specific measures. Varies significantly by council — always check local scheme."
+  },
+  "00d1": {
+    "obj": "Identify any restrictive covenants registered on title that limit the use or development of the land before permit application is lodged.",
+    "checks": [
+      "Order a full title search (Register Search Statement) from Landata or a title agent",
+      "Check for restrictive covenants — common types: single dwelling only, materials (no brick), height limits",
+      "If covenant exists: confirm it is not inconsistent with the proposed use/development",
+      "A covenant inconsistent with a planning permit can still be enforced by a benefited party — advise client",
+      "Application to remove/vary a covenant requires VCAT or Supreme Court under s84 of the Property Law Act",
+      "Note: Planning Scheme overlays and covenants operate independently — a permit does not override a covenant"
+    ],
+    "summary": "A restrictive covenant registered on the Certificate of Title can prohibit or restrict development independently of the planning scheme. Common in older subdivisions: single dwelling restrictions, material covenants, and height limits. A planning permit cannot override a covenant. Check the full Register Search Statement (not just a summary) early — covenant issues discovered late can kill a project or require expensive VCAT proceedings."
+  },
+  "00d2": {
+    "obj": "Identify easements and restrictions shown on the Plan of Subdivision that affect where buildings and services can be located.",
+    "checks": [
+      "Obtain the current registered Plan of Subdivision from Landata or the council property database",
+      "Identify all easements: drainage (DE), sewerage (SE), carriageway (CE), right of way (ROW), and service easements",
+      "Buildings and structures must not be erected over an easement without written consent of the relevant authority",
+      "Confirm easement widths and location on the survey plan — often 1.83m or 3m wide along rear or side boundaries",
+      "Check if a building permit exists for any structure within the easement — if so, rectification may be required",
+      "Waterways and drainage easements may trigger Melbourne Water or council drainage referral",
+      "Review restrictions listed on the PS — these are binding and often limit use, subdivision, or built form"
+    ],
+    "summary": "The Plan of Subdivision (PS) registers easements and restrictions binding on the land. Drainage and sewerage easements prevent building over them. A building permit for a structure over an easement is invalid — a common enforcement issue at occupancy stage. Always plot easements onto the site plan before commencing design."
+  },
+  "00d3": {
+    "obj": "Obtain a Property Information Certificate (reg.51(2) under the Building Regulations 2018) to confirm whether land is subject to flooding, termite risk, or other building constraints before design commences.",
+    "checks": [
+      "Apply to the relevant council or building surveyor for a Property Information Certificate under Reg 51(2)",
+      "Certificate discloses: flood liability (LSIO/FO), termite risk zone, and other building constraints",
+      "If flood-affected: confirm the applicable flood level (AHD) and required minimum floor level (freeboard)",
+      "Flood level is typically supplied by Melbourne Water or the relevant catchment authority",
+      "Minimum floor level for flood-affected land: ground floor habitable rooms typically 300-600mm above flood level",
+      "Confirm whether the site is in a Special Building Overlay (SBO) — these trigger a building permit condition referral"
+    ],
+    "summary": "Under Regulation 51(2) of the Building Regulations 2018, a Property Information Certificate confirms flood liability, termite risk, and other site-specific building constraints. Formerly called an s.221 certificate. If the land is flood-affected, the applicable flood level (AHD) drives minimum floor levels — directly affecting site levels, slab design, and car parking levels. Obtain this early."
+  },
+  "00d4": {
+    "obj": "Identify when Melbourne Water or another catchment management authority (CMA) must be consulted or is a referral authority for planning or building permit applications on flood-affected or waterway-adjacent land.",
+    "checks": [
+      "Check if the site is within Melbourne Water's service area and drainage area boundary",
+      "Check the planning scheme: does the LSIO or FO trigger a referral to Melbourne Water under Cl 44.01 or 44.02?",
+      "If within a SBO: Melbourne Water referral is mandatory for planning and building permits",
+      "Request a Floodplain Management Report from Melbourne Water for the subject property",
+      "Melbourne Water sets the 1% AEP (1-in-100-year) flood level — use this for minimum floor levels",
+      "If outside Melbourne Water's area: identify the relevant CMA (e.g. West Gippsland CMA, North East CMA)",
+      "Drainage works connecting to Melbourne Water drains require a Works Approval / drainage agreement",
+      "OSD (on-site detention) requirements are often set by Melbourne Water or the council drainage engineer"
+    ],
+    "summary": "Melbourne Water is the floodplain management authority for most of metropolitan Melbourne. For flood-affected sites (within LSIO, FO, or SBO), Melbourne Water is a mandatory referral authority under the planning scheme. They supply the applicable 1% AEP flood level, which drives minimum floor levels, freeboard requirements, and OSD design. Outside metro Melbourne, the relevant CMA plays an equivalent role."
+  }
+}

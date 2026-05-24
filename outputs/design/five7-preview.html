@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>five7 — Knowledge Map Design Preview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;600&family=Roboto+Condensed:wght@100;200;300;400&display=swap');
+
+  /* ── DESIGN TOKENS ── */
+  :root {
+    --bg:           #000000;
+    --bg-nav:       #151515;
+    --text-primary: #FFFFFF;
+    --text-body:    #FFFFFFCF;
+    --text-muted:   #FFFFFFA6;
+    --gray-light:   #EBEBEB;
+    --gray-mid:     #CDCDCD;
+    --border:       #FFFFFF30;
+    --divider:      #FFFFFF;
+    --hover-bg:     #FFFFFF;
+    --hover-text:   #000000;
+  }
+
+  /* ── RESET ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    padding: 80px 20px 120px;
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1240px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--divider);
+    margin-bottom: 80px;
+  }
+  .site-logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+  .site-logo span { font-weight: 200; }
+  .header-meta {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 200;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-size: 12px;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+  }
+
+  /* ── SWATCH ROW ── */
+  .swatch-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+  .swatch {
+    width: 72px;
+  }
+  .swatch-block {
+    width: 72px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    margin-bottom: 6px;
+  }
+  .swatch-name {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 200;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .swatch-hex {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-body);
+    margin-top: 2px;
+  }
+
+  /* ── TYPE SCALE ── */
+  .type-scale { margin-bottom: 80px; }
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .type-meta {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 200;
+    color: var(--text-muted);
+    width: 180px;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 0 0 15px;
+  }
+
+  /* ── LAYER 1 BUBBLES ── */
+  .bubbles-section { margin-bottom: 80px; }
+  .bubbles-heading {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+  .bubbles-sub {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    color: var(--text-body);
+    margin-bottom: 60px;
+  }
+
+  .bubble-list { display: flex; flex-direction: column; }
+  .bubble-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .bubble-item:hover {
+    background: var(--hover-bg);
+    color: var(--hover-text);
+  }
+  .bubble-item:hover .bubble-number,
+  .bubble-item:hover .bubble-name,
+  .bubble-item:hover .bubble-tag,
+  .bubble-item:hover .bubble-desc {
+    color: var(--hover-text);
+  }
+  .bubble-item:hover .bubble-tag {
+    border-color: #00000030;
+  }
+
+  .bubble-left { display: flex; align-items: center; gap: 24px; }
+  .bubble-number {
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--text-muted);
+    width: 52px;
+    text-align: right;
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .bubble-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .bubble-right { display: flex; align-items: center; gap: 12px; }
+  .bubble-desc {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--text-muted);
+    text-align: right;
+    max-width: 320px;
+  }
+  .bubble-tag {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .bubble-tag.tp { color: var(--text-primary); border-color: var(--text-primary); }
+  .bubble-tag.wd { border-color: var(--border); }
+  .bubble-tag.both { color: var(--text-primary); border-color: var(--text-primary); }
+
+  /* ── BUTTON STATES ── */
+  .buttons-section { margin-bottom: 80px; }
+  .btn-row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-top: 32px; }
+  .btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    letter-spacing: 0.5px;
+  }
+  .btn:hover { background: var(--hover-bg); color: var(--hover-text); }
+  .btn-naked {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-primary);
+    background: transparent;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-naked:hover { color: var(--text-muted); }
+
+  /* ── FILTER TOGGLE ── */
+  .filter-row { display: flex; gap: 8px; margin-top: 32px; }
+  .filter-btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn.active,
+  .filter-btn:hover { background: var(--hover-bg); color: var(--hover-text); border-color: var(--hover-bg); }
+  .filter-btn.active-tp { background: var(--text-primary); color: var(--hover-text); border-color: var(--text-primary); }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    padding-top: 40px;
+    border-top: 1px solid var(--divider);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-note {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 200;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-logo">five7.<span>knowledge map</span></div>
+    <div class="header-meta">design preview · 2026-05-23</div>
+  </header>
+
+  <!-- COLOUR SWATCHES -->
+  <div class="section-label">colour palette</div>
+  <hr class="section-divider">
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-block" style="background:#000000; border-color:#FFFFFF30;"></div>
+      <div class="swatch-name">bg</div>
+      <div class="swatch-hex">#000000</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#151515;"></div>
+      <div class="swatch-name">bg-nav</div>
+      <div class="swatch-hex">#151515</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FFFFFF;"></div>
+      <div class="swatch-name">text-primary</div>
+      <div class="swatch-hex">#FFFFFF</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FFFFFFCF;"></div>
+      <div class="swatch-name">text-body</div>
+      <div class="swatch-hex">#FFFFFFCF</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FFFFFFA6;"></div>
+      <div class="swatch-name">text-muted</div>
+      <div class="swatch-hex">#FFFFFFA6</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FFFFFF30;"></div>
+      <div class="swatch-name">border</div>
+      <div class="swatch-hex">#FFFFFF30</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#EBEBEB;"></div>
+      <div class="swatch-name">gray-light</div>
+      <div class="swatch-hex">#EBEBEB</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#9E9E9E;"></div>
+      <div class="swatch-name">gray-dim</div>
+      <div class="swatch-hex">#9E9E9E</div>
+    </div>
+  </div>
+
+  <!-- TYPE SCALE -->
+  <div class="section-label">type scale</div>
+  <hr class="section-divider">
+  <div class="type-scale">
+    <div class="type-row">
+      <div class="type-meta">h1 · 50px / 600 · Roboto</div>
+      <div style="font-size:50px;font-weight:600;font-family:'Roboto',sans-serif;line-height:1.2;">knowledge map.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">h2 · 30px / 300 · Roboto</div>
+      <div style="font-size:30px;font-weight:300;font-family:'Roboto',sans-serif;">regulatory constraints.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">h3 · 33px / 600 · Roboto</div>
+      <div style="font-size:33px;font-weight:600;font-family:'Roboto',sans-serif;">building envelope.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">h4 · 22px / 600 · Roboto</div>
+      <div style="font-size:22px;font-weight:600;font-family:'Roboto',sans-serif;">Site & Planning</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">h5 · 19px / 600 · Be Vietnam Pro</div>
+      <div style="font-size:19px;font-weight:600;font-family:'Be Vietnam Pro',sans-serif;color:var(--text-body);">NCC 2022 · Volume Two</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">h6 / label · 12px / 200 · uppercase</div>
+      <div style="font-size:12px;font-weight:200;font-family:'Roboto',sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);">planning permit · TP service</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">number · 30px / 400 · Roboto</div>
+      <div style="font-size:30px;font-weight:400;font-family:'Roboto',sans-serif;color:var(--text-muted);">03</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">body · 16px / 100–200 · Roboto Condensed</div>
+      <div style="font-size:16px;font-weight:200;font-family:'Roboto Condensed',sans-serif;color:var(--text-body);max-width:560px;">The building envelope covers external walls, roof, windows, and doors — regulated by NCC Section H2, Section C (fire), Section J/H6 (energy), and ResCode clause B4.</div>
+    </div>
+  </div>
+
+  <!-- LAYER 1 BUBBLES -->
+  <div class="bubbles-section">
+    <div class="section-label">layer 1 — knowledge map nodes</div>
+    <hr class="section-divider">
+    <h2 class="bubbles-heading">regulatory scope.</h2>
+    <p class="bubbles-sub">Nine categories covering all legal and regulatory constraints on architectural elements in Victoria, AU.</p>
+
+    <!-- TP/WD Filter -->
+    <div class="filter-row" style="margin-bottom:32px;">
+      <button class="filter-btn active-tp" onclick="setFilter('all',this)">All</button>
+      <button class="filter-btn" onclick="setFilter('tp',this)">TP — Planning Permit</button>
+      <button class="filter-btn" onclick="setFilter('wd',this)">WD — Building Permit</button>
+    </div>
+
+    <div class="bubble-list" id="bubble-list">
+      <!-- items injected by JS -->
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="buttons-section">
+    <div class="section-label">component states</div>
+    <hr class="section-divider">
+    <div class="btn-row">
+      <button class="btn">view constraints</button>
+      <button class="btn">suggest an addition</button>
+      <a class="btn-naked" href="#">→ drill down</a>
+    </div>
+    <div class="filter-row" style="margin-top:24px;">
+      <button class="filter-btn active-tp">Active state</button>
+      <button class="filter-btn">Inactive state</button>
+      <button class="filter-btn">Hover me →</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-note">five7. · knowledge map design preview · source: five7-DESIGN.md</div>
+    <div class="footer-note">© 2026 five7</div>
+  </footer>
+
+</div>
+
+<script>
+  const layers = [
+    { id: '00', name: 'site & planning.', desc: 'ResCode B2 · Planning scheme · Building Regs Part 5', tags: ['tp'] },
+    { id: '01', name: 'substructure.', desc: 'NCC H1/B1, H2 · Building Regulations', tags: ['wd'] },
+    { id: '02', name: 'superstructure.', desc: 'NCC B1/H1 · Section C (fire)', tags: ['wd'] },
+    { id: '03', name: 'building envelope.', desc: 'NCC H2, C, J/H6, F5/H4 · ResCode B4', tags: ['tp', 'wd'] },
+    { id: '04', name: 'interiors.', desc: 'NCC F/H4, D · ResCode B3 · AS 1428.1', tags: ['tp', 'wd'] },
+    { id: '05', name: 'fittings & fixtures.', desc: 'NCC F1, H4 · AS 1428.1', tags: ['wd'] },
+    { id: '06', name: 'building services.', desc: 'NCC E, G, H6/J', tags: ['wd'] },
+    { id: '07', name: 'external works.', desc: 'ResCode B2 · Building Regs Part 5', tags: ['tp', 'wd'] },
+    { id: '08', name: 'esd & sustainability.', desc: 'NCC J/H6 · ResCode B5', tags: ['tp', 'wd'] },
+  ];
+
+  let activeFilter = 'all';
+
+  function tagLabel(tags) {
+    if (tags.includes('tp') && tags.includes('wd')) return '<span class="bubble-tag both">TP + WD</span>';
+    if (tags.includes('tp')) return '<span class="bubble-tag tp">TP</span>';
+    return '<span class="bubble-tag wd">WD</span>';
+  }
+
+  function renderBubbles(filter) {
+    const list = document.getElementById('bubble-list');
+    list.innerHTML = '';
+    layers.forEach(l => {
+      if (filter !== 'all' && !l.tags.includes(filter)) return;
+      const item = document.createElement('div');
+      item.className = 'bubble-item';
+      item.innerHTML = `
+        <div class="bubble-left">
+          <div class="bubble-number">${l.id}</div>
+          <div class="bubble-name">${l.name}</div>
+        </div>
+        <div class="bubble-right">
+          <div class="bubble-desc">${l.desc}</div>
+          ${tagLabel(l.tags)}
+        </div>
+      `;
+      list.appendChild(item);
+    });
+  }
+
+  function setFilter(filter, btn) {
+    activeFilter = filter;
+    document.querySelectorAll('.filter-row .filter-btn').forEach(b => {
+      b.classList.remove('active-tp');
+    });
+    btn.classList.add('active-tp');
+    renderBubbles(filter);
+  }
+
+  renderBubbles('all');
+</script>
+</body>
+</html>
