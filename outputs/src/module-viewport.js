@@ -45,7 +45,7 @@
     fitView();
   };
 
-  window.addEventListener('resize', () => {
+  function doResize() {
     APP.computeGeo();
     APP.placeNodes();
     const { GW, GH } = APP.geo;
@@ -53,6 +53,7 @@
     APP.l1.l1Groups.attr('transform', d => `translate(${d.x},${d.y})`);
     APP.l2.l2Groups.attr('transform', d => `translate(${d.x},${d.y})`);
     APP.l3.l3Groups.attr('transform', d => `translate(${d.x},${d.y})`);
+    APP.decor.redraw();           // reposition rings / centre / back button to new geo
     APP.connections.drawConns();
     APP.l2.drawL2Lines();
     APP.l3.drawL3Lines();
@@ -64,6 +65,13 @@
     } else {
       fitView();
     }
+  }
+
+  // Debounce: resize fires continuously during a window drag.
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(doResize, 150);
   });
 
   APP.viewport = { zoom, fitView, zoomToNodes };

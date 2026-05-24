@@ -6,7 +6,8 @@
 (function (APP) {
 
   const { lineLayer, defs, KB, L1CONN, XLINKS, nodeById, allL3Els, allSubs, isExternalLink, RED, geo } = APP;
-  const { NR1, NR2, NR3, CX, CY } = geo;
+  // NB: geo is mutated in place by computeGeo() on resize, so read its fields
+  // live inside each draw function rather than capturing them once here.
 
   // -- L1 MODULE CONNECTION PATHS (lineLayer)
   const connG     = lineLayer.append('g').attr('class', 'conns');
@@ -35,6 +36,7 @@
     .attr('font-family', 'Roboto, sans-serif');
 
   function drawConns() {
+    const { NR1, CX, CY } = geo;
     connPaths.each(function (d) {
       const a = nodeById[d.a], b = nodeById[d.b];
       if (!a || !b) return;
@@ -67,6 +69,7 @@
   }
 
   function drawXLinks(el) {
+    const { NR1, NR2, NR3 } = geo;
     clearXLinks();
     const links = XLINKS.filter(x => x.s === el.id || x.t === el.id);
     if (!links.length) return;
@@ -143,6 +146,13 @@
   function enterIsolatedView(sourceId, targetId, label) {
     const src = nodeById[sourceId], tgt = nodeById[targetId];
     if (!src || !tgt) return;
+    // Derive the label from the data when not supplied, so inline HTML handlers
+    // never need to interpolate free-text into an onclick attribute.
+    if (label == null) {
+      const x = XLINKS.find(l =>
+        (l.s === sourceId && l.t === targetId) || (l.s === targetId && l.t === sourceId));
+      label = x ? x.label : '';
+    }
     APP.state.isoState = { sourceId, targetId, label };
     clearXLinks();
     isoLayer.selectAll('*').remove();
@@ -184,6 +194,7 @@
   }
 
   function drawIsoConnection(src, tgt, label) {
+    const { NR3 } = geo;
     isoLayer.selectAll('*').remove();
     const ang = Math.atan2(tgt.y - src.y, tgt.x - src.x);
     const sx  = src.x + NR3 * Math.cos(ang), sy = src.y + NR3 * Math.sin(ang);
